@@ -1,0 +1,151 @@
+
+
+.btn.app-btn-default {
+  color: #fff;
+  border-color: var(--app-primary-color);
+  background: var(--app-primary-color);
+}
+
+.btn.app-btn-default:hover,
+.btn.app-btn-default:focus {
+    color: #fff;
+    background-color: var(--app-dark-color);
+    border-color: var(--app-dark-color);
+}
+
+.btn.app-btn-primary {
+  color: #fff;
+  background: var(--app-dark-color);
+}
+
+.btn.app-btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn.app-btn-primary:hover,
+.btn.app-btn-primary:focus,
+.btn.app-btn-secondary:hover,
+.btn.app-btn-secondary:focus  {
+  background-color: var(--app-primary-color);
+  border: 1px solid var(--app-primary-color);
+  color: #fff;
+}
+
+.btn.app-btn-outline-default,
+.btn.app-btn-outline-primary,
+.btn.app-btn-outline-secondary,
+.btn.app-btn-outline-success,
+.btn.app-btn-outline-danger,
+.btn.app-btn-outline-danger,
+.btn.app-btn-outline-warning,
+.btn.app-btn-outline-info,
+.btn.app-btn-outlinelight,
+.btn.app-btn-outline-dark {
+    background: #fff;
+}
+
+.btn.app-btn-outline-default {
+  color: var(--app-primary-color);
+  border-color: var(--app-primary-color);
+}
+
+.btn.app-btn-outline-default:hover,
+.btn.app-btn-outline-default:focus{
+    color: #fff;
+    background-color: var(--app-primary-color);
+    border-color: var(--app-primary-color);
+}
+
+.btn.app-btn-outline-primary{
+  background: #fff;
+  color: var(--app-dark-color);
+  border-color: var(--app-dark-color);
+}
+
+.app-btn-outline-primary:hover,
+.app-btn-outline-primary:focus{
+  color: #fff;
+  background-color: var(--app-primary-color);
+  border-color: var(--app-primary-color);
+}
+
+.app-btn-outline-secondary{
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.app-btn-outline-secondary:hover,
+.app-btn-outline-secondary:focus{
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.app-btn-gradient {
+  --app-btn-gradient-start: var(--app-primary-color);
+  --app-btn-gradient-end: var(--app-dark-color);
+
+  color: #fff;
+  border: 2px double transparent !important;
+  background-image: radial-gradient(circle at left top, var(--app-btn-gradient-start), var(--app-btn-gradient-end)), radial-gradient(circle at left top, var(--app-btn-gradient-border-start), var(--app-btn-gradient-border-end));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.app-btn-gradient:hover, 
+.app-btn-gradient:focus {
+  color: #fff;
+  --app-btn-gradient-border-start : var(--app-btn-gradient-start);
+  --app-btn-gradient-border-end: var(--app-btn-gradient-start);
+}
+
+.app-btn-gradient-border {
+    color: var(--app-font-color);
+    border: 2px double transparent !important;
+    background-image: linear-gradient(var(--app-btn-gradient-start), var(--app-btn-gradient-end)), radial-gradient(circle at left top, var(--app-btn-gradient-border-start), var(--app-btn-gradient-border-end));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.app-btn-gradient-border:hover, 
+.app-btn-gradient-border:focus {
+  outline: 0;
+  box-shadow: none;
+  color: var(--nav-utility);
+  border: 2px double transparent !important;
+  background-image: linear-gradient(var(--app-btn-gradient-hover-start), var(--app-btn-gradient-hover-end)), radial-gradient(circle at left top, var(--app-btn-gradient-border-hover-start), var(--app-btn-gradient-border-hover-end));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+
+
+.form-switch.app-switch .form-check-input {
+  width: 2.5em;
+  height: 1.3em;
+  margin-left: -2.5em;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0, 0.25)'/></svg>");
+  background-color: var(--app-bg-surface-overlay-color);
+}
+.form-switch.app-switch .form-check-input:not(:checked):focus {
+  border-color: var(--app-primary-color);
+  outline: 0;
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(67, 207, 217, 1)'/></svg>");
+}
+.form-switch.app-switch .form-check-input:checked {
+  background-color: var(--app-primary-color);
+  border-color: var(--app-primary-color);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255, 1)'/></svg>");
+  outline: none;
+  box-shadow: 0 0 0 0 rgb(13 110 253 / 0%);
+}
+.form-switch.app-switch .form-check-label {
+  padding-top: 2px;
+  padding-left: 10px;
+  user-select: none;
+  /*cursor: pointer;*/
+}

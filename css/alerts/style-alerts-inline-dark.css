@@ -1,0 +1,102 @@
+.darkmode .alert-inline .icon i {
+  color: var(--app-font-color);
+}
+
+.darkmode .alert-inline {
+  background-image: linear-gradient(
+    to bottom,
+    var(--app-bg-surface-overlay-color),
+    transparent
+  );
+}
+
+.darkmode .alert-inline.alert-bg-light {
+  background-image: linear-gradient(
+    to bottom,
+    var(--app-bg-surface-overlay-color),
+    var(--app-bg-surface-overlay-color)
+  );
+}
+
+.darkmode .alert-inline .icon {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+/*============ colors ========*/
+.darkmode .alert-primary {
+  background-color: rgba(7, 73, 149, 0.45);
+  border: 1px solid #062cf1;
+  color: #0396ff;
+}
+.darkmode .alert-inline.alert-primary .icon,
+.darkmode .alert-inline.alert-primary .icon:after {
+  border-color: #3a8ace;
+  background: #1757bb;
+}
+
+.darkmode .alert-success {
+  background-color: rgba(7, 149, 66, 0.35);
+  border: 1px solid rgba(36, 241, 6, 0.46);
+  color: #0ad406;
+}
+
+.darkmode .alert-inline.alert-success .icon,
+.darkmode .alert-inline.alert-success .icon:after {
+  background-color: #0e7100;
+}
+
+.darkmode .alert-warning {
+  background-color: rgba(220, 128, 1, 0.33);
+  border: 1px solid rgba(241, 142, 6, 0.81);
+  color: #ffb103;
+}
+.darkmode .alert-inline.alert-warning .icon,
+.darkmode .alert-inline.alert-warning .icon:after {
+  background-color: #5c3e1e;
+  border-color: #df9229;
+}
+
+.alert-inline.alert-warning .icon i {
+  color: #fc9700;
+}
+
+.darkmode .alert-danger {
+  background-color: rgba(241, 6, 6, 0.33);
+  border: 1px solid rgba(241, 6, 6, 0.81);
+  color: #ff0303;
+}
+.darkmode .alert-inline.alert-danger .icon,
+.darkmode .alert-inline.alert-danger .icon:after {
+  border-color: #ca452e;
+  background: #5c1a1e;
+}
+
+.darkmode .alert-inline.alert-danger .icon i {
+  color: #ffbebe;
+}
+
+.darkmode .alert-info {
+  background-color: rgba(1, 204, 220, 0.33);
+  border: 1px solid rgba(6, 241, 226, 0.81);
+  color: #68c5d9;
+}
+.darkmode .alert-inline.alert-info .icon,
+.darkmode .alert-inline.alert-info .icon:after {
+  border-color: #84b0d6;
+  background: #145766;
+}
+
+.darkmode .alert-info-classic {
+  background-color: #003b59;
+  border: solid 1px #2e9dd3;
+  color: #2cbaff;
+}
+.darkmode .alert-inline.alert-info-classic .icon,
+.darkmode .alert-inline.alert-info-classic .icon:after {
+  border-color: #84b0d6;
+  background: #4372c5;
+}
+
+/*============ ===== ========*/

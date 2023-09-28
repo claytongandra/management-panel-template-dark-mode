@@ -1,0 +1,55 @@
+.darkmode .alert.alert-primary{
+  background-color: rgba(7, 73, 149, 0.35);
+  border: 1px solid rgba(6, 44, 241, 0.46);
+  color: #0396ff;
+}
+
+.darkmode .alert.alert-secondary {
+  background-color: rgba(88, 88, 88, 0.33);
+  border: 1px solid rgba(150, 150, 150, 0.81);
+  color: #ffffff; 
+}
+
+.darkmode .alert.alert-success{
+  background-color: rgba(7, 149, 66, 0.35);
+  border: 1px solid rgba(36, 241, 6, 0.46);
+  color: #0ad406;
+}
+
+.darkmode .alert.alert-warning {
+  background-color: rgba(220, 128, 1, 0.33);
+  border: 1px solid rgba(241, 142, 6, 0.81);
+  color: #ffb103;
+}
+
+.darkmode .alert.alert-danger {
+  background-color: rgba(220, 17, 1, 0.33);
+  border: 1px solid rgba(241, 6, 6, 0.81);
+  color: #ff0303;
+}
+
+.darkmode .alert.alert-info {
+  background-color: rgba(1, 204, 220, 0.33);
+  border: 1px solid rgba(6, 241, 226, 0.81);
+  color: #03d0ff;
+}
+
+.darkmode .alert.alert-light {
+  background-color: rgba(252, 252, 253, 0.33);
+   border: 1px solid rgba(233, 236, 239, 0.81);
+ color: #ffffff;
+
+}
+.darkmode .alert.alert-dark {
+  /*filter: invert(1) grayscale(100%) brightness(200%);*/
+  
+  background-color: rgb(56, 56, 56, 0.33);
+  border: 1px solid rgb(111, 111, 111, 0.81);
+  color: #ffffff;
+}
+
+.darkmode .btn-close {
+ background: transparent url ("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !important;
+  
+filter: invert(1) grayscale(100%) brightness(200%);
+}

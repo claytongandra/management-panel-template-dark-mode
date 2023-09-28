@@ -1,0 +1,16 @@
+/*
+.darkmode .btn-outline-dark {
+  border: 1px solid rgb(111, 111, 111, 0.81);
+  color: #ffffff;
+}
+
+.darkmode .btn-outline-dark:hover {
+  background-color: #424649;
+  border-color: #373b3e;
+}
+
+*/  
+
+.darkmode .btn-close {
+  filter: var(--bs-btn-close-white-filter);
+}

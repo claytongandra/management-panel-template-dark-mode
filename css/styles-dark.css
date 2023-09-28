@@ -1,0 +1,190 @@
+.darkmode {
+  --app-text-dark: #ffffff;
+  --app-text-muted: #565674;
+  --app-text-gray-100: #1b1b29;
+  --app-text-gray-200: #2b2b40;
+  --app-text-gray-300: #323248;
+  --app-text-gray-400: #474761;
+  --app-text-gray-500: #565674;
+  --app-text-gray-600: #6d6d80;
+  --app-text-gray-700: #92929f;
+  --app-text-gray-800: #cdcdde;
+  --app-text-gray-900: #f9f9f9;
+
+  --app-dark-color: var(--app-text-gray-400);
+
+  --app-bg-color: #151521;
+  --app-bg-color-dark: #12121e; /*var(--app-text-gray-400);*/
+  --app-bg-surface-color: #1e1e2d;
+  --app-bg-surface-overlay-color: var(--app-text-gray-200);
+
+  --app-nav-link-bg-color-active: var(--app-dark-color);
+  --app-nav-link-bg-color-hover: var(--app-text-gray-100);
+
+  --app-btn-gradient-start: var(--app-bg-surface-overlay-color);
+  --app-btn-gradient-end: var(--app-bg-surface-overlay-color);
+  --app-btn-gradient-border-start: var(--app-primary-color);
+  --app-btn-gradient-border-end:var(--app-text-gray-900);
+
+  --app-btn-gradient-hover-start: var(--app-bg-surface-overlay-color);
+  --app-btn-gradient-hover-end: var(--app-bg-surface-overlay-color);
+  --app-btn-gradient-border-hover-start: var(--app-primary-color);
+  --app-btn-gradient-border-hover-end: var(--app-primary-color);
+  
+  --app-dropdown-item-hover: var(--app-text-gray-300);
+
+  --app-font-color: var(--app-text-gray-800);
+  --app-font-secondary-color: var(--app-text-gray-700);
+
+  --app-main-border-color: #4a4a4a;
+
+  --app-sidebar-dark-bg-color: #1e1e2d;
+  --app-sidebar-dark-border-color: #4a4a4a;
+
+  --app-sidebar-bg-color: var(--app-sidebar-dark-bg-color);
+  --app-sidepanel-footer-border-color: var(--app-sidebar-dark-border-color);
+
+  --app-header-bg-color: #1e1e2d;
+
+  --app-dl-striped-bg: var(--app-text-gray-200);
+}
+
+.darkmode .app-beveled-line {
+  border-bottom: 1px solid #686868;
+}
+.darkmode .app-beveled-line-vert {
+  border-right: 1px solid #686868;
+}
+
+.darkmode .app-nav .nav-link:hover {
+  background: var(--app-text-gray-200);
+}
+.darkmode .app-nav .active:hover > .nav-link {
+  color: var(--app-font-secondary-color);
+}
+
+.app-nav .submenu-link:hover {
+  background: var(--app-text-gray-200);
+  color: var(--app-primary-color);
+}
+/*--------------------------------------------------------------*/
+
+/* Dark Mode Toggle */
+/*--------------------------------------------------------------*/
+.app-dark-mode-toggle {
+  border: 1px none blue;
+  padding: 0.375rem 0.35rem !important;
+}
+.app-dark-mode-toggle .switch:hover {
+  border: 1px solid var(--app-primary-color) !important;
+  color: var(--nav-utility-hover) !important;
+}
+
+.app-dark-mode-toggle .checkbox:checked ~ .background {
+  background-color: #232326;
+}
+
+.app-dark-mode-toggle .checkbox {
+  display: none;
+}
+
+.app-dark-mode-toggle .switch {
+  --icon-active-position: 4px;
+  --icon-inactive-position: 35px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  height: 25px; /*29px;*/
+  border: 1px solid var(--app-text-gray-300);
+  border-radius: 24px;
+  padding-left: 23px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2; /*rgba(0, 0, 0, 0.05);*/ /*#444;*/
+  font-size: 17px; /*21px;*/
+  color: var(--cl-dark);
+  cursor: pointer;
+  user-select: none;
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch {
+  background-color: var(--app-text-gray-400);
+  border-color: #666;
+  color: var(--nav-utility);
+}
+
+.app-dark-mode-toggle .icon-wrapper {
+  transition: border-radius 0.1s, background-color 0.5s;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  width: 21px; /*25px;*/
+  height: 21px; /*25px;*/
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch > .icon-wrapper {
+  background-color: #222;
+}
+
+.app-dark-mode-toggle .switch__label--dark,
+.app-dark-mode-toggle .switch__label--light {
+  font-size: 0.7em !important;
+  margin: 0 11px 0 5px; /*0 10px;*/
+  min-height: 8px;
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch > .switch__label--light {
+  display: none;
+}
+
+.app-dark-mode-toggle .switch__label--dark.switch__label--dark {
+  display: none;
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch > .switch__label--dark {
+  display: inline;
+}
+
+.app-dark-mode-toggle .sun,
+.app-dark-mode-toggle .moon {
+  font-size: 0.85em !important;
+  left: 3px;
+}
+
+.app-dark-mode-toggle .sun-icon {
+  color: #ffbb52;
+  border: 1px none #ffbb52;
+}
+
+.app-dark-mode-toggle .moon-icon {
+  color: white;
+  border: 1px none red;
+}
+
+.app-dark-mode-toggle .sun {
+  transition: top 0.5s;
+  position: absolute;
+  top: var(--icon-active-position);
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch .sun {
+  top: var(--icon-inactive-position);
+}
+
+.app-dark-mode-toggle .moon {
+  transition: bottom 0.5s;
+  position: absolute;
+  bottom: var(--icon-inactive-position);
+  /* z-index: 2;*/
+}
+
+.app-dark-mode-toggle .checkbox:checked + .switch .moon {
+  bottom: calc(var(--icon-active-position) - 2px);
+  left: calc(var(--icon-active-position));
+}
+/*--------------------------------------------------------------*/

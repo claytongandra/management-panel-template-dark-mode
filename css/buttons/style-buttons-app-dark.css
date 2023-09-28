@@ -1,0 +1,63 @@
+.darkmode .btn.app-btn-default:hover,
+.darkmode .btn.app-btn-default:focus {
+    color: #fff;
+    background-color: var(--app-dark-color);
+    border-color: var(--app-primary-color);
+}
+
+.darkmode .btn.app-btn-primary {
+  color: #fff;
+  background: var(--app-dark-color);
+  border-color: var(--app-primary-color);
+}
+
+.darkmode .btn.app-btn-primary:hover,
+.darkmode .btn.app-btn-primary:focus  {
+  color: #fff;
+  background-color: var(--app-primary-color);
+  border: 1px solid var(--app-primary-color);
+}
+
+.darkmode .app-btn-outline-default,
+.darkmode .app-btn-outline-primary,
+.darkmode .app-btn-outline-secondary,
+.darkmode .app-btn-outline-success,
+.darkmode .app-btn-outline-danger,
+.darkmode .app-btn-outline-danger,
+.darkmode .app-btn-outline-warning,
+.darkmode .app-btn-outline-info,
+.darkmode .app-btn-outlinelight,
+.darkmode .app-btn-outline-dark {
+    background: #333;
+}
+
+.darkmode .btn.app-btn-outline-primary{
+  background: #333;
+  color: var(--app-text-gray-800);
+  border-color: var(--app-text-gray-800);
+}
+
+.darkmode .app-btn-outline-primary:hover,
+.darkmode .app-btn-outline-primary:focus{
+    color: #fff;
+    background-color: var(--app-primary-color);
+    border-color: var(--app-primary-color);
+}
+
+.darkmode .app-btn-outline-secondary{
+  color: #cbcbcb;
+  border-color: #cbcbcb;
+}
+
+.darkmode .app-btn-outline-secondary:hover,
+.darkmode .app-btn-outline-secondary:focus{
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.darkmode .form-switch.app-switch .form-check-input {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(237, 237, 237, 1)'/></svg>");
+}
+
+

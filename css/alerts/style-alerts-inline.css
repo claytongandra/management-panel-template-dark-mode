@@ -1,0 +1,212 @@
+.alert-inline {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  display: table;
+  width: 100%;
+  border-top-color: #d8d8d8;
+  border-bottom-color: #bdbdbd;
+  border-left-color: #cacaca;
+  border-right-color: #cacaca;
+  color: #404040;
+  padding-left: 65px;
+  position: relative;
+}
+
+.alert-inline.rounded {
+  border-radius: 3px !important;
+}
+.alert-inline.rounded .icon {
+  border-radius: 3px 0 0 3px !important;
+}
+.alert-inline .icon {
+  text-align: center;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #bdbdbd;
+  padding-top: 15px;
+  z-index: 1;
+}
+.alert-inline .icon:after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid #bdbdbd;
+  position: absolute;
+  border-left: 0;
+  border-bottom: 0;
+  top: 50%;
+  right: -6px;
+  margin-top: -3px;
+  background: #fff;
+}
+.alert-inline .icon i {
+  font-size: 20px;
+  color: #fff;
+  left: 12px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+}
+
+.alert-inline.alert-primary {
+  background-image: linear-gradient(to bottom, #fff, #d9edf7);
+}
+
+.alert-inline.alert-success {
+  background-image: linear-gradient(to bottom, #fff, #dff0d8);
+}
+
+.alert-inline.alert-warning {
+  background-image: linear-gradient(to bottom, #fff, #fffdf4);
+}
+
+.alert-inline.alert-danger {
+  background-image: linear-gradient(to bottom, #fff, #f2dede);
+}
+
+.alert-inline.alert-info {
+  background-image: linear-gradient(to bottom, #fff, #cff4fc);
+}
+
+.alert-inline.alert-info-classic {
+  background-image: linear-gradient(to bottom, #fff, #d9edf7);
+}
+
+.alert-inline.alert-bg-light {
+  background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+}
+
+/*============ colors ========*/
+
+.alert-primary {
+  background-color: #d9edf7;
+  border: solid 1px #9ec5fe; /* #98cce6*/
+  color: #3a87ad;
+}
+.alert-inline.alert-primary .icon,
+.alert-inline.alert-primary .icon:after {
+  border-color: #3a8ace;
+  background: #0d6efd;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border: solid 1px #d6e9c6;
+}
+.alert-inline.alert-success .icon,
+.alert-inline.alert-success .icon:after {
+  border-color: #54a754;
+  background: #60c060;
+}
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border: solid 1px #f1daab;
+  color: #c09853;
+}
+.alert-inline.alert-warning .icon,
+.alert-inline.alert-warning .icon:after {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #fc9700;
+}
+.alert-inline.alert-warning .icon i {
+  color: #fc9700;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border: solid 1px #e0b1b8;
+  color: #b94a48;
+}
+.alert-inline.alert-danger .icon,
+.alert-inline.alert-danger .icon:after {
+  border-color: #ca452e;
+  background: #da4932;
+}
+
+.alert-info {
+  background-color: #d9edf7;
+  border: solid 1px #9eeaf9; /* #98cce6*/
+  color: #3a87ad;
+}
+.alert-inline.alert-info .icon,
+.alert-inline.alert-info .icon:after {
+  border-color: #84b0d6;
+  background: #0dcaf0;
+}
+
+.alert-info-classic {
+  background-color: #d9edf7;
+  border: solid 1px #cbeeff; /* #98cce6*/
+  color: #3a87ad;
+}
+.alert-inline.alert-info-classic .icon,
+.alert-inline.alert-info-classic .icon:after {
+  border-color: #3a8ace;
+  background: #4d90fd;
+}
+
+.alert-inline-content {
+  padding-right: 0px;
+  padding-left: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  width: 100% !important;
+  font-size: 14px;
+  border: none 1px navy;
+}
+.alert-inline-content .alert-message,
+.alert-inline-content-nav .alert-message {
+  vertical-align: middle;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin: 0;
+  border: none 1px rgb(183, 0, 255);
+}
+
+.alert-inline-content-nav .alert-message {
+  width: 90.66666667%;
+  border: none 1px red;
+  float: left;
+}
+
+.alert-inline-content-nav .nav-right {
+  padding-right: 2px;
+  padding-left: 2px;
+  margin: 0;
+  float: right;
+  max-width: 11.66666667% !important;
+  border: none 1px red;
+}
+
+.app-btn-xs {
+  --bs-btn-padding-y: 1px;
+  --bs-btn-padding-x: 5px;
+  --bs-btn-font-size: 0.75rem;
+  border-radius: 3px;
+}
+
+@media (min-width: 1200px) {
+  .alert-inline-content-nav .nav-right,
+  #btns {
+    width: 7.33333333% !important;
+  }
+  #ta {
+    width: 90.66666667%;
+  }
+  .alert-inline-content-nav .nav-message {
+    width: 90.66666667%;
+  }
+}
