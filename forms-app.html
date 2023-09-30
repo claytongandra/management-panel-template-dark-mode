@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/styles-dark.css" />
     <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/buttons/style-buttons-app.css" />
-    <link rel="stylesheet" href="css/buttons/style-buttons-app-dark.css" />
+    <link rel="stylesheet" href="css/forms/style-forms-app.css" />
+    <link rel="stylesheet" href="css/forms/style-forms-app-dark.css" />
     <script type="module" src="script-darkmode.js"></script>
   </head>
 
@@ -78,21 +78,10 @@
                     </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="/Users/TeamMember/Details/2e0f0140-3828-402a-80fc-ef7a2388709a"
-                        ><i class="bi bi-person-lines-fill icon-sm"
-                          >&nbsp;&nbsp;</i
-                        >Conta</a
-                      >
+                      <a class="dropdown-item" href="/Users/TeamMember/Details/2e0f0140-3828-402a-80fc-ef7a2388709a"><i class="bi bi-person-lines-fill icon-sm">&nbsp;&nbsp;</i>Conta</a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="/Manage/Account/ChangePassword"
-                        ><i class="bi bi-key icon-sm">&nbsp;&nbsp;</i>Alterar
-                        Senha</a
-                      >
+                      <a class="dropdown-item" href="/Manage/Account/ChangePassword"><i class="bi bi-key icon-sm">&nbsp;&nbsp;</i>Alterar Senha</a>
                     </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
@@ -156,8 +145,8 @@
                 </div>
               </li>
              
-              <li class="nav-item has-submenu active">
-              <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-buttons" aria-expanded="true" aria-controls="submenu-buttons">
+              <li class="nav-item has-submenu">
+              <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-buttons" aria-expanded="false" aria-controls="submenu-buttons">
                 <span class="nav-icon">
                   <i class="bi bi-hand-index-thumb icon-sm">&nbsp;&nbsp;</i>
                 </span>
@@ -166,23 +155,23 @@
                   <i class="bi bi-chevron-down"></i> 
                 </span><!--//submenu-arrow--> 
               </a><!--//nav-link-->
-              <div id="submenu-buttons" class="submenu submenu-buttons show" data-bs-parent="#menu-accordion" style="">
+              <div id="submenu-buttons" class="submenu submenu-buttons collapse" data-bs-parent="#menu-accordion" style="">
                 <ul class="submenu-list list-unstyled">                 
                   <li class="submenu-item">
-                    <a id="buttons-app" class="submenu-link active" href="buttons-app.html">App Buttons</a>
+                    <a id="buttons-app" class="submenu-link" href="buttons-app.html">App Buttons</a>
                   </li>
                   <li class="submenu-item">
                     <a id="buttons-bootstrap" class="submenu-link" href="buttons-bootstrap.html">Buttons Bootstrap</a>
                   </li>
                   <li class="submenu-item">
                     <a id="links-app" class="submenu-link" href="links-app.html">Links</a>
-                  </li>                 
+                  </li> 
                 </ul>
               </div>
             </li>
 
-            <li class="nav-item has-submenu">
-              <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-forms" aria-expanded="false" aria-controls="submenu-forms">
+            <li class="nav-item has-submenu active">
+              <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-forms" aria-expanded="true" aria-controls="submenu-forms">
                 <span class="nav-icon">
                   <i class="bi bi-card-heading icon-sm">&nbsp;&nbsp;</i>
                 </span>
@@ -191,10 +180,10 @@
                   <i class="bi bi-chevron-down"></i> 
                 </span><!--//submenu-arrow--> 
               </a><!--//nav-link-->
-              <div id="submenu-forms" class="submenu submenu-forms collapse" data-bs-parent="#menu-accordion" style="">
+              <div id="submenu-forms" class="submenu submenu-forms show" data-bs-parent="#menu-accordion" style="">
                 <ul class="submenu-list list-unstyled">                 
                   <li class="submenu-item">
-                    <a id="forms-app" class="submenu-link" href="forms-app.html">App Form</a>
+                    <a id="forms-app" class="submenu-link active" href="forms-app.html">App Form</a>
                   </li>
                   <li class="submenu-item">
                     <a id="forms-animated-label" class="submenu-link" href="forms-animated-label.html">Animated Label Form</a>
@@ -202,7 +191,6 @@
                 </ul>
               </div>
             </li>
-
             </ul>
             <!--//app-menu-->
           </nav>
@@ -238,28 +226,18 @@
             <div class="row g-3 mb-4 justify-content-between">
               <div class="col-auto">
                 <h1 class="app-page-title">
-                  <i class="fa-solid fa-toggle-off">&nbsp;&nbsp;</i>App Buttons
+                  <i class="fa-solid fa-toggle-off">&nbsp;&nbsp;</i>App Forms
                 </h1>
               </div>
               <div class="col-auto d-flex">
                   <div class="dropdown mx-1">
-                    <select id="buttonSizeSelect" class="form-select form-select-sm"  aria-label=".form-select-sm">
-                      <option>Select button size</option>
+                    <select id="borderStyleSelect" class="form-select form-select-sm" aria-label="Border Style Select">
+                      <option>Select border style</option>
                       <option disabled>  </option>
-                      <option value="R" selected>Regular button</option>
-                      <option value="S">Small button</option>
-                      <option value="L">Large button</option>
+                      <option value="S" selected>Solid</option>
+                      <option value="G">Gradient</option>
                     </select>
-                  </div>
-                  <div class="dropdown mx-1">
-                    <select id="backgroundSelect" class="form-select form-select-sm" aria-label=".form-select-sm">
-                      <option>Select background level</option>
-                      <option disabled>   </option>
-                      <option value="B" selected>Background</option>
-                      <option value="S">Surface</option>
-                      <option value="O">Overlay</option>
-                    </select>                   
-                  </div>
+                </div>
               </div>
               <div class="app-beveled-line"></div>
             </div>
@@ -272,56 +250,102 @@
                   </div>
                   <!--//app-card-header-->
                   <div class="app-card-body px-4 w-100">
-                    <h4>App Principal</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                    <button type="button" class="btn app-btn-default btn-example">Default</button>
-                    <button type="button" class="btn app-btn-primary btn-example">Primary</button>
-                    <button type="button" class="btn app-btn-secondary btn-example">Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 0.5rem;">Disabled state</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-default btn-example" disabled>Default</button>
-                        <button type="button" class="btn app-btn-primary btn-example" disabled>Primary</button>
-                        <button type="button" class="btn app-btn-secondary btn-example" disabled>Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 3rem;">Outline app buttons</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-outline-default btn-example">Default</button>
-                        <button type="button" class="btn app-btn-outline-primary btn-example">Primary</button>
-                        <button type="button" class="btn app-btn-outline-secondary btn-example">Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 0.5rem;">Outline Disabled state</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-outline-default btn-example" disabled>Default</button>
-                        <button type="button" class="btn app-btn-outline-primary btn-example" disabled>Primary</button>
-                        <button type="button" class="btn app-btn-outline-secondary btn-example" disabled>Secondary</button>
-                    </div>
+                    <div class="row">
+                      <div class="col-md-6 d-flex flex-column align-content-end mx-auto"> 
+                        <form id="formExample">
+                        
+                          <div class="app-form-group">
+                            <label for="exampleName1" class="">Name</label>
+                            <input type="text" class="form-control" id="exampleName1">
+                            <div class="line"></div>
+                          </div>
 
-                    <h4 style="margin-top: 3rem;">Gradient buttons</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-gradient-border btn-example">Gradient Border</button>
-                        <button type="button" class="btn app-btn-gradient borter-0 btn-example">Gradient Button</button>
-                    </div>
+                         
 
-                      <h4 style="margin-top: 3rem;">Switches</h4>
-                      <div class="bg-example bg-color m-0 border-1">
-                          <div class="form-check form-switch app-switch">
-                              <input class="form-check-input" type="checkbox" role="switch"  id="appSwitchCheckDefault" value="true">
-                              <label class="form-check-label" for="appSwitchCheckDefault"> Default app switch checkbox input</label>
+
+                          <div class="row app-form-row">
+                              <div class="app-form-group col-6">
+                                  <label for="staticEmail2" class="">Email</label>
+                                  <input type="email" class="form-control" id="staticEmail2" value="">                                  
+                                  <div class="line"></div>
+                              </div>                         
+                          
+                              <div class="app-form-group col-6">   
+                                <label for="inputPassword2" class="">Password</label>
+                                <input type="password" class="form-control" id="inputPassword2">                                    
+                                <div class="line"></div>
+                              </div>
                           </div>
-                          <div class="form-check form-switch app-switch">
-                              <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckChecked" checked>
-                              <label class="form-check-label" for="appSwitchCheckChecked">Default app checked switch checkbox input</label>
+
+                          <div class="row app-form-row">
+                            <div class="app-form-group col-5">
+                              <label for="inputCity">City</label>
+                              <input type="text" class="form-control" id="inputCity">                              
+                              <div class="line"></div>
+                            </div>
+                            <div class="app-form-group col-4">
+                            <label for="inputState">State</label>
+                              <select id="inputState" class="form-select">
+                                <option ></option>
+                                <option >Choose...</option>
+                                <option>State Option 1</option>
+                                <option>State Option 2</option>
+                              </select>                             
+                              <div class="line"></div>
+                            </div>
+                            <div class="app-form-group col-3">
+                              <label for="inputZip">Zip</label>
+                              <input type="text" class="form-control" id="inputZip">                             
+                              <div class="line"></div>
+                            </div>
                           </div>
-                          <div class="form-check form-switch app-switch">
-                              <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckDisabled" disabled>
-                              <label class="form-check-label" for="appSwitchCheckDisabled">Default app disabled switch checkbox input</label>
+
+                          <div class="row app-form-row">
+                          <div class="app-form-group col-6">
+                            <label for="inputCityDisabled">Text Disabled</label>
+                            <input type="text" class="form-control" id="inputCityDisabled" disabled>                              
+                            <div class="line"></div>
                           </div>
-                          <div class="form-check form-switch app-switch">
-                              <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckCheckedDisabled" checked disabled>
-                              <label class="form-check-label" for="appSwitchCheckCheckedDisabled">Default app disabled checked switch checkbox input</label>
+                          <div class="app-form-group col-6">
+                          <label for="inputStateDisabled">Disabled</label>
+                            <select id="inputStateDisabled" class="form-select" disabled>
+                              <option ></option>
+                              <option >Choose...</option>
+                              <option>State Option 1</option>
+                              <option>State Option 2</option>
+                            </select>                             
+                            <div class="line"></div>
+                          </div>                         
+                        </div>
+
+                        <div class="app-form-group">
+                            <label for="exampleName1" class="">Readonly</label>
+                            <input class="form-control" type="text" id="textReadonly" value="Readonly input here..." aria-label="readonly input example" readonly>
+                            <div class="line"></div>
                           </div>
-                      </div>
+
+                          <div class="app-form-group">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="line"></div>
+                          </div>
+                          <div class="app-form-group">
+                            <div class="form-check form-switch app-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"  id="appSwitchCheckDefault" value="true">
+                                <label class="form-check-label" for="appSwitchCheckDefault"> Default app switch checkbox input</label>
+                            </div>
+                          </div>
+
+                          <div class="app-form-group">
+                            <button type="submit" class="btn btn-primary btn-loading w-100 mx-auto">Submit</button>
+                          </div>
+                          <div class="app-form-group">
+                            <button type="submit" class="btn btn-primary  w-100 mx-auto" disabled>Submit disabled</button>
+                          </div>
+                        </form>
+                      </div><!--//col-md-6-->
+                    </div><!--//row-->
+
                   </div><!--//app-card-body-->
                   <div class="app-card-footer p-4 mt-auto"></div>
                   <!--//app-card-footer-->
@@ -357,44 +381,77 @@
     <script type="module" src="script.js"></script>
   </body>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const backgroundSelect = document.getElementById("backgroundSelect");
-    const divs = document.querySelectorAll(".bg-example");
+      document.addEventListener("DOMContentLoaded", function () {
 
-    backgroundSelect.addEventListener("change", () => {
-        const selectedValue = backgroundSelect.value;
+        fnAddBorderStyleInputForm(); 
 
-        divs.forEach((div) => {
-            //div.className = "bg-example"; // Reset classes
-            // Mantenha as classes existentes e adicione a nova classe com base na seleção
-            div.classList.remove("bg-color", "bg-surface", "bg-surface-overlay");
-            if (selectedValue === "B") {
-                div.classList.add("bg-color");
-            } else if (selectedValue === "S") {
-                div.classList.add("bg-surface");
-            } else if (selectedValue === "O") {
-                div.classList.add("bg-surface-overlay");
-            }
-        });
-    });
+        var form = document.getElementById("formExample");
 
-    const buttonSizeSelect = document.getElementById("buttonSizeSelect");
-    const btns = document.querySelectorAll(".btn-example");
+        fnAddLoadingButtomOnSubmitForm(form); // btn submit css class (btn-loading)
 
-    buttonSizeSelect.addEventListener("change", () => {
-      const selectedValue = buttonSizeSelect.value;
+      });//end DOMContentLoaded
 
-      btns.forEach((btn) => {
-        btn.classList.remove("btn-lg", "btn-sm");
-        if (selectedValue === "S") {
-          btn.classList.add("btn-sm");
-        } else if (selectedValue === "L") {
-          btn.classList.add("btn-lg");       
-        }
+      var _jsonData;
+
+      /* Form Buttom Loading */
+    /* ------------------------------------------------- */
+    fnAddLoadingButtomOnSubmitForm = function (prmForm) {
+      prmForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+        var waitText = "Please wait...";
+            var btnSubmit = this.querySelector('button[type="submit"]');
+            var btnOriginalTxt = btnSubmit.textContent || btnSubmit.innerText;
+      
+        const font = "bold 16px arial"
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        context.font = font;
+        const { width } = context.measureText(waitText);
+
+        document.documentElement.style.setProperty('--loadingbuttom-position-left', `${Math.round(width / 2)+26}px`);
+        
+          var formIsValid = true;
+      
+          if (formIsValid) {
+              btnSubmit.classList.toggle("btn-wait");
+
+                  btnSubmit.disabled = true;
+                  btnSubmit.innerHTML = waitText;
+                  btnSubmit.dataset.originaltext = btnOriginalTxt;
+                  btnSubmit.dataset.ariaBusy = "true";
+          }
+
+          
+
+          setTimeout(function () {
+            btnSubmit.classList.toggle("btn-wait");
+
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = btnOriginalTxt;
+            btnSubmit.dataset.ariaBusy = "false";
+          }, 3000);
+
+          return false;
       });
-    });
+    }
+    /* ------------------------------------------------- */
 
-  });//end DOMContentLoaded
+    fnAddBorderStyleInputForm = function(){
+      const borderStyleSelect = document.getElementById("borderStyleSelect");
+      const lines = document.querySelectorAll(".line");
 
+      borderStyleSelect.addEventListener("change", () => {
+          const selectedValue = borderStyleSelect.value;
+
+          lines.forEach((line) => {
+              //div.className = "bg-example"; // Reset classes
+              // Mantenha as classes existentes e adicione a nova classe com base na seleção
+              line.classList.remove("line-gradient");
+              if (selectedValue === "G") {
+                line.classList.add("line-gradient");
+              } 
+          });
+      });
+    }
 </script>
 </html>

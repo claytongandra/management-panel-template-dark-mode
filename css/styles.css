@@ -37,6 +37,8 @@
 
   --app-primary-color: #43cfd9;/*#43cfd9;*/
   --app-secondary-color: #bb86fc; /*#bb86fc;*/
+  --app-secondary-color-dark: #673AB7;
+
   --app-dark-color: #333333;
 
   --app-bg-color: var(--app-color-aqua);
@@ -46,6 +48,8 @@
 
   --app-nav-link-bg-color-active: var(--app-dark-color);
   --app-nav-link-bg-color-hover: var(--app-text-gray-100);
+
+  --app-btn-submit-border-color: var(--app-dark-color);
 
   --app-btn-gradient-start: var(--app-bg-surface-overlay-color);
   --app-btn-gradient-end: var(--app-bg-surface-overlay-color);
@@ -78,6 +82,23 @@
   --app-dl-striped-bg: rgba(0, 0, 0, 0.05);
 
   --app-footer-bg-color: var(--app-bg-color-dark);
+
+  --app-input-bg-color: #ffffff;
+  --app-input-border-color: #ced4da;
+  --app-input-border-bottom-color: var(--app-dark-color);
+
+  --app-input-readonly-bg-color: #e9ecef;
+  --app-input-readonly-border-bottom-color: var(--app-input-border-bottom-color);
+
+  --app-input-border-bottom-gradient-start: var(--app-primary-color); 
+  --app-input-border-bottom-gradient-end:var(--app-secondary-color); /*#673ab7*/
+
+  --app-input-disabled-border-bottom-color: #a7a7a7;
+  
+  --app-input-button-disabled-color:#cccccc;
+  --app-input-button-disabled-opacity: 0.65;
+
+
 
   /*--- Test only ----------------------------*/
   --app-body-test-border: none 1px var(--app-color-red);
@@ -684,6 +705,76 @@ dl.dl-striped > dd:last-child {
 }*/
 /*--------------------------------------------------------------*/
 
+.form-switch.app-switch .form-check-input {
+  width: 2.5em;
+  height: 1.3em;
+  margin-left: -2.5em;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0, 0.25)'/></svg>");
+  background-color: var(--app-bg-surface-overlay-color);
+}
+.form-switch.app-switch .form-check-input:not(:checked):focus {
+  border-color: var(--app-primary-color);
+  outline: 0;
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(67, 207, 217, 1)'/></svg>");
+}
+.form-switch.app-switch .form-check-input:checked {
+  background-color: var(--app-primary-color);
+  border-color: var(--app-primary-color);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255, 1)'/></svg>");
+  outline: none;
+  box-shadow: 0 0 0 0 rgb(13 110 253 / 0%);
+}
+.form-switch.app-switch .form-check-label {
+  padding-top: 2px;
+  padding-left: 10px;
+  user-select: none;
+  /*cursor: pointer;*/
+}
+/*--------------------------------------------------------------*/
+
+/* Submit button*/
+/*--------------------------------------------------------------*/
+
+.app-form-group button[type=submit] {
+  background-color: var(--app-dark-color);
+  border: 1px solid var(--app-btn-submit-border-color);
+  color: white;
+  width: 85%;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-border-radius: 0.2rem !important;
+  border-radius: 0.2rem !important;
+  margin: 5px 20px 5px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.app-form-group  button[type=submit]:hover {
+  background-color:  var(--app-primary-color);
+  border: 1px solid var(--app-primary-color);
+}
+
+.app-form-group button:disabled, 
+.app-form-group button:disabled:hover, 
+.app-form-group button[type=button]:disabled:hover, 
+.app-form-group button[type=submit]:disabled:hover, 
+.app-form-group button[type=reset]:disabled:hover
+{
+  background-color: var(--app-input-button-disabled-color);
+  border: 1px solid var(--app-input-button-disabled-color);
+  opacity: var(--app-input-button-disabled-opacity);
+}
+/*--------------------------------------------------------------*/
+
 /* Footer */
 /*--------------------------------------------------------------*/
 .app-footer {
@@ -724,6 +815,45 @@ dl.dl-striped > dd:last-child {
   display: inline-block;
   padding: 0 5px;
 }
+
+/* LoadingButtomOnSubmitForm*/
+/*--------------------------------------------------------------*/
+.btn-wait {
+  position: relative;
+  /* padding-right: 48px!important;*/
+  padding-left: 48px !important;
+  color: var(--app-dark-color) !important;
+}
+.btn-wait:after,
+.btn-wait:before {
+  --app-loadingbuttom-position-left: 76px;
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  /*top: calc(50% - 12px);
+  right: 12px;*/
+  left: calc(50% - var(--app-loadingbuttom-position-left));
+  opacity: 1;
+}
+.btn-loading :before {
+  background-image: none;
+}
+
+.btn-loading:after {
+  background-image: url("data:image/svg+xml; charset=UTF-8,%EF%BB%BF%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10.186' opacity='.8' fill='none' stroke='%23333333' stroke-width='3.8' stroke-dasharray='32 52' stroke-linecap='round' /%3E%3C/svg%3E");
+  animation: spin 1.3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+} 
 
 /*--------------------------------------------------------------*/
 @media (min-width: 1200px) {

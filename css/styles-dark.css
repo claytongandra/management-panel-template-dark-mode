@@ -21,6 +21,8 @@
   --app-nav-link-bg-color-active: var(--app-dark-color);
   --app-nav-link-bg-color-hover: var(--app-text-gray-100);
 
+  --app-btn-submit-border-color: var(--app-primary-color);
+
   --app-btn-gradient-start: var(--app-bg-surface-overlay-color);
   --app-btn-gradient-end: var(--app-bg-surface-overlay-color);
   --app-btn-gradient-border-start: var(--app-primary-color);
@@ -47,6 +49,21 @@
   --app-header-bg-color: #1e1e2d;
 
   --app-dl-striped-bg: var(--app-text-gray-200);
+
+  --app-input-bg-color: var(--app-text-gray-100);
+  --app-input-border-color: var(--app-text-gray-600);
+  --app-input-border-bottom-color: var(--app-text-gray-800);
+
+  --app-input-readonly-bg-color: #5B5B64;
+  --app-input-readonly-border-bottom-color: var(--app-input-border-bottom-color);
+
+  --app-input-border-bottom-gradient-end: var(--app-secondary-color); /*var(--app-text-gray-900);*/ /*#673ab7*/
+
+  --app-input-disabled-border-bottom-color: #a7a7a7;
+
+  --app-input-button-disabled-color:#cccccc;
+  --app-input-button-disabled-opacity: 0.35;
+
 }
 
 .darkmode .app-beveled-line {
@@ -188,3 +205,20 @@
   left: calc(var(--icon-active-position));
 }
 /*--------------------------------------------------------------*/
+
+.darkmode .form-switch.app-switch .form-check-input {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(205, 205, 222, 1)'/></svg>");
+  border-color: var(--app-text-gray-800);
+}
+
+.darkmode  .form-switch.app-switch .form-check-input:checked {
+  background-color: var(--app-primary-color);
+  border-color: var(--app-primary-color);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255, 1)'/></svg>");
+  outline: none;
+  box-shadow: 0 0 0 0 rgb(13 110 253 / 0%);
+}
+/*--------------------------------------------------------------*/
+.darkmode .form-select {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23cdcdde' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+}
