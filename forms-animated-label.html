@@ -214,37 +214,54 @@
       <main role="main" class="pb-3">
         <div class="app-content pt-3 p-md-3 p-lg-4">
           <div class="container-xl">
-            <div class="row g-3 mb-4 justify-content-between">
+            <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
               <div class="col-auto">
                 <h1 class="app-page-title">
                   <i class="fa-solid fa-toggle-off">&nbsp;&nbsp;</i>Animated Label Forms
                 </h1>
               </div>
-              <div class="col-auto d-flex">
-                    <div class="dropdown mx-1">
-                      <select id="borderStyleSelect" class="form-select form-select-sm" aria-label="Border Style Select">
-                        <option>Select border style</option>
-                        <option disabled>  </option>
-                        <option value="S">Solid</option>
-                        <option value="G" selected>Gradient</option>
-                      </select>
-                  </div>
-              </div>
-              <div class="app-beveled-line"></div>
-            </div>
+              <div class="col-auto d-flex">                  
 
+                  <div class="dropdown app-form-group-animated app-form-group-sm mx-1">
+                    <select id="borderStyleSelect" class="form-select app-border" aria-label="Border Style Select">
+                      <option disabled >Select border style</option>
+                      <option disabled>  </option>
+                      <option value="S">Solid</option>
+                      <option value="G" selected>Gradient</option>
+                    </select>
+                    <label for="borderStyleSelect">Border style</label> 
+                    <div class="line"></div>
+                  </div>
+
+                  <div class="dropdown app-form-group-animated app-form-group-sm mx-1">
+                      <select id="selectFieldHeight" class="form-select app-border" aria-label="Select Field Height">
+                        <option disabled>Select field height</option>
+                        <option disabled>  </option>
+                        <option value="D" selected>Default</option>
+                        <option value="S">Small</option>
+                        <option value="L">Large</option>
+                      </select>
+                      <label for="borderStyleSelect">Field height</label> 
+                      <div class="line"></div>
+                  </div>
+              </div>             
+            </div>
+            <div class="app-beveled-line mb-4"></div>
+            
             <div class="row gy-4">
               <div class="col-12">
                 <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
                   <div class="app-card-header px-4 p-3 w-100">
-                    <div class="row g-3 mb-1 align-items-center justify-content-between">
+                    <div class="row app-card-nav-toolbar g-3 mb-1 align-items-center justify-content-between">
                     
                       <div class="col-auto">
                       </div>
-                      <div class="col-auto m-0 py-2 app-page-nav-toolbar">
-                          <div class="form-check form-switch app-switch">
-                              <input class="form-check-input" type="checkbox" role="switch"  id="borderCheckbox" value="true">
-                              <label class="form-check-label" for="borderCheckbox">Fields with border</label>
+                      <div class="col-auto m-0 py-2">
+                          <div class="app-form-group app-form-group-sm">
+                              <div class="form-check form-switch app-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch"  id="borderCheckbox" value="true">
+                                  <label class="form-check-label" for="borderCheckbox">Fields with border</label>
+                              </div>
                           </div>
                       </div>
                       <div class="app-beveled-line"></div>
@@ -257,37 +274,37 @@
                     <div class="col-md-6 d-flex flex-column align-content-end mx-auto"> 
                       <form id="formExample">
                       
-                        <div class="app-form-group-animated">
+                        <div class="app-form-group-animated mb-2">
                           <input type="text" class="form-control" id="exampleName1">
                           <label for="exampleName1" class="">Name</label>                          
                           <div class="line line-gradient"></div>
                         </div>
 
                         <div class="row app-form-row">
-                          <div class="app-form-group-animated col-6">    
+                          <div class="app-form-group-animated mb-2 col-6">    
                             <input type="text" class="form-control" id="staticEmail2" value="">
                             <label for="staticEmail2" class="">Email</label>
                             <div class="line line-gradient"></div>
                         </div>                    
-                        <div class="app-form-group-animated col-6">   
+                        <div class="app-form-group-animated mb-2 col-6">   
                             <input type="password" class="form-control" id="inputPassword2">
                             <label for="inputPassword2" class="">Password</label>
                             <div class="line line-gradient"></div>
                         </div>
                       </div> 
                       
-                        <div class="app-form-group-animated">
+                        <div class="app-form-group-animated mb-2">
                         <input type="text" class="form-control" id="inputAddress">
                         <label for="inputAddress">Address</label>
                         <div class="line line-gradient"></div>
                       </div>
                         <div class="row app-form-row">
-                          <div class="app-form-group-animated col-5">
+                          <div class="app-form-group-animated mb-2 col-5">
                             <input type="text" class="form-control" id="inputCity">
                             <label for="inputCity">City</label>
                             <div class="line line-gradient"></div>
                           </div>
-                          <div class="app-form-group-animated col-4">
+                          <div class="app-form-group-animated mb-2 col-4">
                             <select id="inputState" class="form-select">
                               <option ></option>
                               <option >Choose...</option>
@@ -297,7 +314,7 @@
                             <label for="inputState">State</label>
                             <div class="line line-gradient"></div>
                           </div>
-                          <div class="app-form-group-animated col-3">
+                          <div class="app-form-group-animated mb-2 col-3">
                             <input type="text" class="form-control" id="inputZip">
                             <label for="inputZip">Zip</label>
                             <div class="line line-gradient"></div>
@@ -305,12 +322,12 @@
                       </div>
 
                       <div class="row app-form-row">
-                        <div class="app-form-group-animated col-6">                         
+                        <div class="app-form-group-animated mb-2 col-6">                         
                           <input type="text" class="form-control" id="inputCityDisabled" disabled> 
                           <label for="inputCityDisabled">Text Disabled</label>                             
                           <div class="line line-gradient"></div>
                         </div>
-                        <div class="app-form-group-animated col-6">                        
+                        <div class="app-form-group-animated mb-2 col-6">                        
                           <select id="inputStateDisabled" class="form-select" disabled>
                             <option ></option>
                             <option >Choose...</option>
@@ -322,29 +339,29 @@
                         </div>                         
                       </div>
 
-                      <div class="app-form-group-animated">                        
+                      <div class="app-form-group-animated mb-2">                        
                         <input class="form-control" type="text" id="textReadonly" value="Readonly input here..." aria-label="readonly input example" readonly>
                         <label for="exampleName1" class="">Readonly</label>
                         <div class="line line-gradient"></div>
                       </div>
 
-                       <div class="app-form-group-animated">
+                       <div class="app-form-group-animated mb-2">
                         <textarea class="form-control" rows="4"></textarea>
                         <label>Example textarea</label>
                         <div class="line line-gradient"></div>
                       </div>                    
                       
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <div class="form-check form-switch app-switch">
                                 <input class="form-check-input" type="checkbox" role="switch"  id="appSwitchCheckDefault" value="true">
                                 <label class="form-check-label" for="appSwitchCheckDefault"> Default app switch checkbox input</label>
                             </div>
                           </div>
 
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <button type="submit" class="btn btn-primary btn-loading w-100 mx-auto">Submit</button>
                           </div>
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <button type="submit" class="btn btn-primary  w-100 mx-auto" disabled>Submit disabled</button>
                           </div>
 
@@ -389,6 +406,7 @@
   document.addEventListener("DOMContentLoaded", function () {
 
     fnAddBorderStyleInputForm(); 
+    fnAddSelectFieldHeightForm();
     fnAddFieldsBorderCheckbox(); 
 
     var form = document.getElementById("formExample");
@@ -460,9 +478,32 @@ fnAddBorderStyleInputForm = function(){
   });
 }
 
+  fnAddSelectFieldHeightForm = function(){
+    const selectFieldHeight = document.getElementById("selectFieldHeight");
+    const form = document.getElementById("formExample");
+    const fields = form.querySelectorAll(".app-form-group-animated, .app-form-group");
+
+    selectFieldHeight.addEventListener("change", () => {
+        const selectedValue = selectFieldHeight.value;
+
+        fields.forEach((field) => {
+            //div.className = "bg-example"; // Reset classes
+            // Mantenha as classes existentes e adicione a nova classe com base na seleção
+            field.classList.remove("app-form-group-sm", "app-form-group-lg");
+            if (selectedValue === "S") {
+              field.classList.add("app-form-group-sm");
+            }
+            else if (selectedValue === "L"){
+              field.classList.add("app-form-group-lg");
+            }
+        });
+    });
+  }
+
 fnAddFieldsBorderCheckbox = function(){
   const borderCheckbox = document.getElementById("borderCheckbox");
-  const formControls = document.querySelectorAll(".app-form-group-animated .form-control, .app-form-group-animated .form-select");
+  const form = document.getElementById("formExample");
+  const formControls = form.querySelectorAll(".app-form-group-animated .form-control, .app-form-group-animated .form-select");
 
   borderCheckbox.addEventListener("change", () => {
       if (borderCheckbox.checked) {

@@ -223,38 +223,60 @@
       <main role="main" class="pb-3">
         <div class="app-content pt-3 p-md-3 p-lg-4">
           <div class="container-xl">
-            <div class="row g-3 mb-4 justify-content-between">
+            <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
               <div class="col-auto">
                 <h1 class="app-page-title">
                   <i class="fa-solid fa-toggle-off">&nbsp;&nbsp;</i>App Forms
                 </h1>
               </div>
               <div class="col-auto d-flex">
-                  <div class="dropdown mx-1">
-                    <select id="borderStyleSelect" class="form-select form-select-sm" aria-label="Border Style Select">
+                  <div class="dropdown app-form-group app-form-group-sm mx-1">
+                    <select id="borderStyleSelect" class="form-select" aria-label="Border Style Select">
                       <option>Select border style</option>
                       <option disabled>  </option>
                       <option value="S" selected>Solid</option>
                       <option value="G">Gradient</option>
                     </select>
+                    <div class="line"></div>
                 </div>
-              </div>
-              <div class="app-beveled-line"></div>
+                 <div class="dropdown app-form-group app-form-group-sm mx-1">
+                    <select id="selectFieldHeight" class="form-select" aria-label="Select Field Height">
+                      <option>Select field height</option>
+                      <option disabled>  </option>
+                      <option value="D" selected>Default</option>
+                      <option value="S">Small</option>
+                      <option value="L">Large</option>
+                    </select>
+                    <div class="line"></div>
+                </div>
+              </div>              
             </div>
+            <div class="app-beveled-line mb-4 "></div>
 
             <div class="row gy-4">
               <div class="col-12">
                 <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
                   <div class="app-card-header px-4 p-3 w-100">
-                    <div class="row g-3 mb-1 align-items-center justify-content-between"></div>
-                  </div>
-                  <!--//app-card-header-->
+                    <div class="row app-card-nav-toolbar g-3 mb-1 align-items-center justify-content-between">
+                        <div class="col-auto">
+                        </div>
+                        <div class="col-auto m-0 py-2">
+                            <div class="app-form-group app-form-group-sm">
+                                <div class="form-check form-switch app-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch"  id="borderCheckbox" value="true" checked disabled>
+                                    <label class="form-check-label" for="borderCheckbox">Fields with border</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app-beveled-line"></div>
+                    </div>
+                  </div><!--//app-card-header-->
                   <div class="app-card-body px-4 w-100">
                     <div class="row">
                       <div class="col-md-6 d-flex flex-column align-content-end mx-auto"> 
                         <form id="formExample">
                         
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <label for="exampleName1" class="">Name</label>
                             <input type="text" class="form-control" id="exampleName1">
                             <div class="line"></div>
@@ -264,13 +286,13 @@
 
 
                           <div class="row app-form-row">
-                              <div class="app-form-group col-6">
+                              <div class="app-form-group mb-3 col-6">
                                   <label for="staticEmail2" class="">Email</label>
                                   <input type="email" class="form-control" id="staticEmail2" value="">                                  
                                   <div class="line"></div>
                               </div>                         
                           
-                              <div class="app-form-group col-6">   
+                              <div class="app-form-group mb-3 col-6">   
                                 <label for="inputPassword2" class="">Password</label>
                                 <input type="password" class="form-control" id="inputPassword2">                                    
                                 <div class="line"></div>
@@ -278,12 +300,12 @@
                           </div>
 
                           <div class="row app-form-row">
-                            <div class="app-form-group col-5">
+                            <div class="app-form-group mb-3 col-5">
                               <label for="inputCity">City</label>
                               <input type="text" class="form-control" id="inputCity">                              
                               <div class="line"></div>
                             </div>
-                            <div class="app-form-group col-4">
+                            <div class="app-form-group mb-3 col-4">
                             <label for="inputState">State</label>
                               <select id="inputState" class="form-select">
                                 <option ></option>
@@ -293,20 +315,21 @@
                               </select>                             
                               <div class="line"></div>
                             </div>
-                            <div class="app-form-group col-3">
+                            <div class="app-form-group mb-3 col-3">
                               <label for="inputZip">Zip</label>
                               <input type="text" class="form-control" id="inputZip">                             
                               <div class="line"></div>
                             </div>
                           </div>
 
+ 
                           <div class="row app-form-row">
-                          <div class="app-form-group col-6">
+                          <div class="app-form-group mb-3 col-6">
                             <label for="inputCityDisabled">Text Disabled</label>
                             <input type="text" class="form-control" id="inputCityDisabled" disabled>                              
                             <div class="line"></div>
                           </div>
-                          <div class="app-form-group col-6">
+                          <div class="app-form-group mb-3 col-6">
                           <label for="inputStateDisabled">Disabled</label>
                             <select id="inputStateDisabled" class="form-select" disabled>
                               <option ></option>
@@ -318,28 +341,28 @@
                           </div>                         
                         </div>
 
-                        <div class="app-form-group">
+                        <div class="app-form-group mb-3">
                             <label for="exampleName1" class="">Readonly</label>
                             <input class="form-control" type="text" id="textReadonly" value="Readonly input here..." aria-label="readonly input example" readonly>
                             <div class="line"></div>
                           </div>
 
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             <div class="line"></div>
                           </div>
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <div class="form-check form-switch app-switch">
                                 <input class="form-check-input" type="checkbox" role="switch"  id="appSwitchCheckDefault" value="true">
                                 <label class="form-check-label" for="appSwitchCheckDefault"> Default app switch checkbox input</label>
                             </div>
                           </div>
 
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <button type="submit" class="btn btn-primary btn-loading w-100 mx-auto">Submit</button>
                           </div>
-                          <div class="app-form-group">
+                          <div class="app-form-group mb-3">
                             <button type="submit" class="btn btn-primary  w-100 mx-auto" disabled>Submit disabled</button>
                           </div>
                         </form>
@@ -384,6 +407,7 @@
       document.addEventListener("DOMContentLoaded", function () {
 
         fnAddBorderStyleInputForm(); 
+        fnAddSelectFieldHeightForm();
 
         var form = document.getElementById("formExample");
 
@@ -453,5 +477,31 @@
           });
       });
     }
+
+    fnAddSelectFieldHeightForm = function(){
+      const selectFieldHeight = document.getElementById("selectFieldHeight");
+
+      const form = document.getElementById("formExample");
+      const fields = form.querySelectorAll(".app-form-group");
+
+      selectFieldHeight.addEventListener("change", () => {
+          const selectedValue = selectFieldHeight.value;
+
+          fields.forEach((field) => {
+              //div.className = "bg-example"; // Reset classes
+              // Mantenha as classes existentes e adicione a nova classe com base na seleção
+              field.classList.remove("app-form-group-sm", "app-form-group-lg");
+              if (selectedValue === "S") {
+                field.classList.add("app-form-group-sm");
+              }
+              else if (selectedValue === "L"){
+                field.classList.add("app-form-group-lg");
+              }
+          });
+      });
+    }
+
+    
+
 </script>
 </html>

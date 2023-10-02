@@ -12,7 +12,7 @@
   --app-text-gray-200: #f1f1f2;
   --app-text-gray-300: #dbdfe9;
   --app-text-gray-400: #b5b5c3;
-  --app-text-gray-500: #99a1b7;
+  --app-text-gray-500: #99a1b7; 
   --app-text-gray-600: #78829d;
   --app-text-gray-700: #4b5675;
   --app-text-gray-800: #252f4a;
@@ -89,6 +89,7 @@
 
   --app-input-readonly-bg-color: #e9ecef;
   --app-input-readonly-border-bottom-color: var(--app-input-border-bottom-color);
+  --app-input-readonly-label-color: var(--app-text-gray-600);
 
   --app-input-border-bottom-gradient-start: var(--app-primary-color); 
   --app-input-border-bottom-gradient-end:var(--app-secondary-color); /*#673ab7*/
@@ -145,6 +146,14 @@ body {
   background: var(--app-bg-color);
   padding-top: 65px;
   overflow-x: hidden;
+}
+/**/
+.app-page-nav-toolbar{
+  min-height: 55px;
+}
+
+.row.app-page-nav-toolbar > * {
+  margin-top: 0;
 }
 
 .app-header {
@@ -706,8 +715,12 @@ dl.dl-striped > dd:last-child {
 /*--------------------------------------------------------------*/
 
 .form-switch.app-switch .form-check-input {
+  /*
   width: 2.5em;
   height: 1.3em;
+  */
+  width: 2.3em;
+  height: 1.1em;
   margin-left: -2.5em;
   cursor: pointer;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0, 0.25)'/></svg>");
@@ -727,12 +740,41 @@ dl.dl-striped > dd:last-child {
   box-shadow: 0 0 0 0 rgb(13 110 253 / 0%);
 }
 .form-switch.app-switch .form-check-label {
-  padding-top: 2px;
-  padding-left: 10px;
+  padding-top: 1px;
+  padding-left: 5px;
   user-select: none;
   /*cursor: pointer;*/
 }
+
+.app-form-group-sm .form-switch.app-switch .form-check-input{
+  width: 2em;
+  height: 1em;
+}
+
+.app-form-group-sm .form-switch.app-switch .form-check-label {
+  padding-top: 0;
+  padding-left: 0;
+  user-select: none;
+  /* cursor: pointer; */
+}
+
+.app-form-group-lg .form-switch.app-switch .form-check-input{
+  width: 2.5em;
+  height: 1.3em;
+}
+
+.app-form-group-lg .form-switch.app-switch .form-check-label {
+  padding-top: 2px;
+  padding-left: 10px;
+  user-select: none;
+  /* cursor: pointer; */
+}
 /*--------------------------------------------------------------*/
+
+/* ** Form ** */
+
+/*--------------------------------------------------------------*/
+
 
 /* Submit button*/
 /*--------------------------------------------------------------*/
