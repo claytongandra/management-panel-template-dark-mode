@@ -1,6 +1,7 @@
+/*
 .app-form-group{
   position: relative;
-  /*margin-bottom: 1.25rem!important;*/
+  /*margin-bottom: 1.25rem!important;* /
   outline: 0px;
 
 }
@@ -49,7 +50,7 @@
 }
 
 .app-form-group label {
-  /*font-size: 17px;*/
+  /*font-size: 17px;* /
   color: var(--app-font-color);
   font-weight: normal;
   letter-spacing: 0.033rem;
@@ -92,13 +93,13 @@
 }
 
 .app-form-group .line {
-  /*position: absolute;*/
+  /*position: absolute;* /
   display: block;
   bottom: 0;
   left: 1px;
   right: 1px;
   height: 2px;
-  background-color: var(--app-input-border-bottom-color);/*#26c6da;*/
+  background-color: var(--app-input-border-bottom-color);/*#26c6da;* /
   border-radius: 0 0 0.2rem 0.2rem;
   border-left: solid 1px var(--app-input-border-color);
   border-right: solid 1px var(--app-input-border-color);
@@ -146,7 +147,7 @@
 .app-form-group .line:after {
   content: "";
   height: 2px;
-  /*position: absolute;*/
+  /*position: absolute;* /
   display: block;
   background: var(--app-primary-color);
   left: 0;
@@ -170,3 +171,4 @@
 .app-form-group select.form-control:not([size]):not([multiple]) {
   height: 41px;
 }
+*/

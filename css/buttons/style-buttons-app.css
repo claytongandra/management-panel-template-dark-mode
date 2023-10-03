@@ -121,7 +121,7 @@
 }
 
 
-
+/*
 .form-switch.app-switch .form-check-input {
   width: 2.5em;
   height: 1.3em;
@@ -147,5 +147,6 @@
   padding-top: 2px;
   padding-left: 10px;
   user-select: none;
-  /*cursor: pointer;*/
+  /*cursor: pointer;* /
 }
+*/
