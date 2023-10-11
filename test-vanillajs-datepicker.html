@@ -38,7 +38,7 @@
 
         const datePicker = MCDatepicker.create({
   el: '#datepicker',
-  bodyType: 'inline',
+  bodyType: 'modal', //modal | inline
   dateFormat: 'dddd, dd/mm/yyyy',
   closeOnBlur: true,
   minDate: new Date(2020, 10, 25),
@@ -46,6 +46,7 @@
     selectedDate: new Date(),
     customClearBTN: 'Limpar',
     customCancelBTN: 'Cancelar',
+    showCalendarDisplay: true,
   customWeekDays: ['Domingo', 'Segunda-feira', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
   customMonths: ['Janeiro', 'Fevereiro', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Outubro', 'November', 'December']
 });
