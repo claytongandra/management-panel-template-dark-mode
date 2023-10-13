@@ -337,9 +337,28 @@
                   <i class="fa-solid fa-toggle-on">&nbsp;&nbsp;</i>Bootstrap Buttons
                 </h1>
               </div>
-              <div class="col-auto">
-                <p></p>
-              </div>
+              <div class="col-auto d-flex">                 
+                <div class="dropdown app-form-group app-form-group-sm mx-1">
+                  <select id="backgroundSelect" class="form-select" aria-label="Select background level">
+                    <option>Select background level</option>
+                    <option disabled>   </option>
+                    <option value="B" selected>Background</option>
+                    <option value="S">Surface</option>
+                    <option value="O">Overlay</option>
+                  </select>
+                  <div class="line"></div>                
+                </div>
+                <div class="dropdown app-form-group app-form-group-sm mx-1">
+                  <select id="buttonSizeSelect" class="form-select"  aria-label="Select button size">
+                    <option>Select button size</option>
+                    <option disabled>  </option>
+                    <option value="R" selected>Regular button</option>
+                    <option value="S">Small button</option>
+                    <option value="L">Large button</option>
+                  </select>
+                  <div class="line"></div>
+                </div>
+            </div>
             </div>
             <div class="app-beveled-line mb-4 "></div>
 
@@ -352,47 +371,47 @@
                   <!--//app-card-header-->
                   <div class="app-card-body px-4 w-100">
                     <h4>Bootstrap Variants</h4>
-                    <div class="bg-example m-0 border-1">
-                        <button type="button" class="btn btn-primary">Primary</button>
-                        <button type="button" class="btn btn-secondary">Secondary</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-danger">Danger</button>
-                        <button type="button" class="btn btn-warning">Warning</button>
-                        <button type="button" class="btn btn-info">Info</button>
-                        <button type="button" class="btn btn-light">Light</button>
-                        <button type="button" class="btn btn-dark">Dark</button>                      
-                        <button type="button" class="btn btn-link">Link</button>
+                    <div class="bg-example bg-color m-0 border-1">
+                        <button type="button" class="btn btn-primary btn-example">Primary</button>
+                        <button type="button" class="btn btn-secondary btn-example">Secondary</button>
+                        <button type="button" class="btn btn-success btn-example">Success</button>
+                        <button type="button" class="btn btn-danger btn-example">Danger</button>
+                        <button type="button" class="btn btn-warning btn-example">Warning</button>
+                        <button type="button" class="btn btn-info btn-example">Info</button>
+                        <button type="button" class="btn btn-light btn-example">Light</button>
+                        <button type="button" class="btn btn-dark btn-example">Dark</button>                      
+                        <button type="button" class="btn btn-link btn-example">Link</button>
                     </div>
                     <h4 style="margin-top: 0.5rem;">Disabled state</h4>
-                    <div class="bg-example m-0 border-1">
-                        <button type="button" class="btn btn-primary" disabled>Primary</button>
-                        <button type="button" class="btn btn-secondary" disabled>Secondary</button>
+                    <div class="bg-example bg-color m-0 border-1">
+                        <button type="button" class="btn btn-primary btn-example" disabled>Primary</button>
+                        <button type="button" class="btn btn-secondary btn-example" disabled>Secondary</button>
                     </div>
                     <h4 style="margin-top: 3rem;">Outline buttons</h4>
-                    <div class="bg-example m-0 border-1">
-                        <button type="button" class="btn btn-outline-primary">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                        <button type="button" class="btn btn-outline-success">Success</button>
-                        <button type="button" class="btn btn-outline-danger">Danger</button>
-                        <button type="button" class="btn btn-outline-warning">Warning</button>
-                        <button type="button" class="btn btn-outline-info">Info</button>
-                        <button type="button" class="btn btn-outline-light">Light</button>
-                        <button type="button" class="btn btn-outline-dark">Dark</button>
+                    <div class="bg-example bg-color m-0 border-1">
+                        <button type="button" class="btn btn-outline-primary btn-example">Primary</button>
+                        <button type="button" class="btn btn-outline-secondary btn-example">Secondary</button>
+                        <button type="button" class="btn btn-outline-success btn-example">Success</button>
+                        <button type="button" class="btn btn-outline-danger btn-example">Danger</button>
+                        <button type="button" class="btn btn-outline-warning btn-example">Warning</button>
+                        <button type="button" class="btn btn-outline-info btn-example">Info</button>
+                        <button type="button" class="btn btn-outline-light btn-example">Light</button>
+                        <button type="button" class="btn btn-outline-dark btn-example">Dark</button>
                     </div>
                     <h4 style="margin-top: 0.5rem;">Outline Disabled state</h4>
-                    <div class="bg-example m-0 border-1">
-                        <button type="button" class="btn btn-outline-primary" disabled>Primary</button>
-                        <button type="button" class="btn btn-outline-secondary" disabled>Secondary</button>
-                        <button type="button" class="btn btn-outline-success" disabled>Success</button>
-                        <button type="button" class="btn btn-outline-danger" disabled>Danger</button>
-                        <button type="button" class="btn btn-outline-warning" disabled>Warning</button>
-                        <button type="button" class="btn btn-outline-info" disabled>Info</button>
-                        <button type="button" class="btn btn-outline-light" disabled>Light</button>
-                        <button type="button" class="btn btn-outline-dark" disabled >Dark</button>
+                    <div class="bg-example bg-color m-0 border-1">
+                        <button type="button" class="btn btn-outline-primary btn-example" disabled>Primary</button>
+                        <button type="button" class="btn btn-outline-secondary btn-example" disabled>Secondary</button>
+                        <button type="button" class="btn btn-outline-success btn-example" disabled>Success</button>
+                        <button type="button" class="btn btn-outline-danger btn-example" disabled>Danger</button>
+                        <button type="button" class="btn btn-outline-warning btn-example" disabled>Warning</button>
+                        <button type="button" class="btn btn-outline-info btn-example" disabled>Info</button>
+                        <button type="button" class="btn btn-outline-light btn-example" disabled>Light</button>
+                        <button type="button" class="btn btn-outline-dark btn-example" disabled >Dark</button>
                     </div>
                     
                     <h4 style="margin-top: 3rem;">Switches</h4>
-                    <div class="bg-example m-0 border-1">
+                    <div id="switchesExample" class="bg-example bg-color m-0 border-1">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
@@ -411,11 +430,11 @@
                         </div>
                     </div>
                     <h4 style="margin-top: 3rem;">Close button</h4>
-                    <div class="bg-example m-0 border-1">
+                    <div class="bg-example bg-color m-0 border-1">
                         <button type="button" class="btn-close" aria-label="Close"></button>
                     </div>
                     <h4 style="margin-top: 0.5rem;">Close button Disabled state</h4>
-                    <div class="bg-example m-0 border-1">
+                    <div class="bg-example bg-color m-0 border-1">
                         <button type="button" class="btn-close" disabled aria-label="Close"></button>
                     </div>
                   </div><!--//app-card-body-->
@@ -453,5 +472,61 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     ></script>
     <script type="module" src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backgroundSelect = document.getElementById("backgroundSelect");
+        const divs = document.querySelectorAll(".bg-example");
+    
+        backgroundSelect.addEventListener("change", () => {
+            const selectedValue = backgroundSelect.value;
+    
+            divs.forEach((div) => {
+                //div.className = "bg-example"; // Reset classes
+                // Mantenha as classes existentes e adicione a nova classe com base na seleção
+                div.classList.remove("bg-color", "bg-surface", "bg-surface-overlay");
+                if (selectedValue === "B") {
+                    div.classList.add("bg-color");
+                } else if (selectedValue === "S") {
+                    div.classList.add("bg-surface");
+                } else if (selectedValue === "O") {
+                    div.classList.add("bg-surface-overlay");
+                }
+            });
+        });
+    
+        const buttonSizeSelect = document.getElementById("buttonSizeSelect");
+        const btns = document.querySelectorAll(".btn-example");
+        const switchesSection = document.getElementById("switchesExample");
+        const fields = switchesSection.querySelectorAll(".app-form-group");
+    
+        buttonSizeSelect.addEventListener("change", () => {
+          const selectedValue = buttonSizeSelect.value;
+    
+          btns.forEach((btn) => {
+            btn.classList.remove("btn-lg", "btn-sm");
+            if (selectedValue === "S") {
+              btn.classList.add("btn-sm");
+            } else if (selectedValue === "L") {
+              btn.classList.add("btn-lg");       
+            }
+          });
+    
+          fields.forEach((field) => {
+              //div.className = "bg-example"; // Reset classes
+              // Mantenha as classes existentes e adicione a nova classe com base na seleção
+              field.classList.remove("app-form-group-sm", "app-form-group-lg");
+              if (selectedValue === "S") {
+                field.classList.add("app-form-group-sm");
+              }
+              else if (selectedValue === "L"){
+                field.classList.add("app-form-group-lg");
+              }
+          });
+    
+        });
+    
+      });//end DOMContentLoaded
+    
+    </script>
   </body>
 </html>

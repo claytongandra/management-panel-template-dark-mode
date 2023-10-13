@@ -859,6 +859,7 @@ dl.dl-striped > dd:last-child {
 }
 .app-footer .app-footer-content small {
   line-height: 20px;
+  display: block;
 }
 
 /* LoadingButtomOnSubmitForm*/
