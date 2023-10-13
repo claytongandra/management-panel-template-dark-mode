@@ -5,15 +5,298 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Vanilla JS Datepicker Demo</title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css">
-
         <link href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/styles-dark.css" />
+        <link rel="stylesheet" href="css/site.css" />
+        <script type="module" src="script-darkmode.js"></script>
+
+
+
+
+
+
     </head>
-    <body>
+    <body class="app">    
+    <script>
+        const selectedTheme = localStorage.getItem('appColorScheme');
+        const darkTheme = 'darkmode';
+        if (selectedTheme == null) {
+          const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          document.body.classList[prefersDarkScheme.matches && selectedTheme == null ? 'add' : 'remove'](darkTheme);
+        }
+        else{
+          document.body.classList[selectedTheme === 'dark' ? 'add'  : 'remove'](darkTheme);
+        }      
+    </script>
+    <header class="app-header fixed-top">
+      <div class="app-header-inner">
+        <div class="container-fluid px-4">
+          <div class="app-header-content">
+            <div class="row justify-content-between align-items-center" style="height: 65px">
+              <div class="col-4">
+                <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img">
+                    <title>Menu</title>
+                    <path stroke="currentColor" stroke-linecap="round"  stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+                  </svg>
+                </a>
+              </div>
+              <!--//col-auto-->
+              <div class="app-utilities col-auto">
+                <div class="app-utility-item app-dark-mode-toggle-item">
+                  <div class="app-dark-mode-toggle">
+                    <input class="checkbox" type="checkbox" id="dark-mode-toggle" name="status" value="on" />
+                    <label class="switch" for="dark-mode-toggle">
+                      <span class="icon-wrapper">
+                        <i class="sun sun-icon fa-solid fa-sun"></i>
+                        <i class="moon moon-icon fa-regular fa-moon"></i>
+                      </span>
+                      <span class="switch__label--light">
+                        <span class="d-none d-sm-none d-md-block">Light</span> </span><!--Light --><!-- Claro -->
+                      <span class="switch__label--dark">
+                        <span class="d-none d-sm-none d-md-block">Dark</span> </span><!--Dark --><!-- Escuro -->
+                    </label>
+                  </div>
+                  <!--//app-dark-mode-toggle-->
+                </div>
+                <!--//app-dark-mode-toggle-->
+
+                <div class="app-utility-item app-user-dropdown dropdown">
+                  <a class="btn dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    <img src="https://avatars.githubusercontent.com/u/695924?s=96&v=4" id="profile-image" alt="Imagem do Perfil" />
+                    <span class="xl-display-none">Clayton Gandra</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle" data-popper-placement="bottom-start"                   style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 38px);">
+                    <li>
+                      <div class="text-center">
+                        <div class="">Usuário:</div>
+                        <div class="user-name">
+                          <small>claytongandra</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="/Users/TeamMember/Details/2e0f0140-3828-402a-80fc-ef7a2388709a"><i class="bi bi-person-lines-fill icon-sm">&nbsp;&nbsp;</i>Conta</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/Manage/Account/ChangePassword"><i class="bi bi-key icon-sm">&nbsp;&nbsp;</i>Alterar Senha</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="/Account/Signout"><i class="bi bi-box-arrow-left">&nbsp;&nbsp;</i>Sair</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--//app-user-dropdown-->
+              </div>
+              <!--//app-utilities col-auto-->
+            </div>
+            <!--//row-->
+          </div>
+          <!--//app-header-content-->
+        </div>
+        <!--//container-fluid py-2-->
+      </div>
+      <!--//app-header-inner-->
+
+      <div id="app-sidepanel" class="app-sidepanel">
+        <div id="sidepanel-drop" class="sidepanel-drop"></div>
+        <div class="sidepanel-inner d-flex flex-column">
+          <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;<span class="sidepanel-close-text">Close</span></a>
+
+          <div class="app-branding text-center">
+            <a class="app-logo" href="/">
+              <div class="logo-icon"></div>
+              <span class="logo-text">Management Panel</span>
+            </a>
+          </div>
+          <!--//app-branding-->
+
+          <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+            <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+              <!--//---Menu Home------------>
+              <li id="linkHome" class="nav-item active">
+                <a class="nav-link" href="/">
+                  <span class="nav-icon">
+                    <i class="bi bi-house-door icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Home</span> </a><!--//nav-link-->
+              </li><!--//nav-item-->
+              <!--//---**********------------>
+              <!--//---Menu Forms------------>
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-forms" aria-expanded="false" aria-controls="submenu-forms">
+                  <span class="nav-icon">
+                    <i class="bi bi-card-heading icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Forms</span>
+                  <span class="submenu-arrow">
+                    <i class="bi bi-chevron-down"></i> 
+                  </span><!--//submenu-arrow--> 
+                </a><!--//nav-link-->
+                <div id="submenu-forms" class="submenu submenu-forms collapse" data-bs-parent="#menu-accordion" style="">
+                  <ul class="submenu-list list-unstyled">                 
+                    <li class="submenu-item">
+                      <a id="forms-app" class="submenu-link" href="forms-app.html">App Form</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a id="forms-animated-label" class="submenu-link" href="forms-animated-label.html">Animated Label Form</a>
+                    </li>               
+                  </ul>
+                </div>
+              </li>
+              <!--//---**********------------>
+              <!--//---Menu Buttons & Links------------>
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-buttons" aria-expanded="false" aria-controls="submenu-buttons">
+                  <span class="nav-icon">
+                    <i class="bi bi-hand-index-thumb icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Buttons / Links</span>
+                  <span class="submenu-arrow">
+                    <i class="bi bi-chevron-down"></i> 
+                  </span><!--//submenu-arrow--> 
+                </a><!--//nav-link-->
+                <div id="submenu-buttons" class="submenu submenu-buttons collapse" data-bs-parent="#menu-accordion" style="">
+                  <ul class="submenu-list list-unstyled">
+                  <li class="submenu-item">
+                    <a id="buttons-app" class="submenu-link" href="buttons-app.html">App Buttons</a>
+                  </li>
+                    <li class="submenu-item">
+                      <a id="buttons-bootstrap" class="submenu-link" href="buttons-bootstrap.html">Buttons Bootstrap</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a id="links-app" class="submenu-link" href="links-app.html">Links</a>
+                    </li>              
+                  </ul>
+                </div>
+              </li>
+              <!--//---**********------------>                           
+              <!--//---Menu Components------------>
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-components" aria-expanded="false" aria-controls="submenu-components">
+                  <span class="nav-icon">
+                    <i class="bi bi-boxes icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Components</span>
+                  <span class="submenu-arrow">
+                    <i class="bi bi-chevron-down"></i> 
+                  </span><!--//submenu-arrow--> 
+                </a><!--//nav-link-->
+                <div id="submenu-components" class="submenu submenu-components collapse" data-bs-parent="#menu-accordion" style="">
+                  <ul class="submenu-list list-unstyled">
+                    <li class="submenu-item">
+                      <a id="components-alerts" class="submenu-link" href="alerts.html">Alerts</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a id="components-alerts-inline" class="submenu-link" href="alerts-inline.html">Alerts Inline</a>
+                    </li>                   
+                  </ul>
+                </div>
+              </li>
+              <!--//---**********------------>
+              <!--//---Menu Pages------------>
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-pages" aria-expanded="false" aria-controls="submenu-pages">
+                  <span class="nav-icon">
+                    <i class="bi bi-window-stack icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Pages</span>
+                  <span class="submenu-arrow">
+                    <i class="bi bi-chevron-down"></i> 
+                  </span><!--//submenu-arrow--> 
+                </a><!--//nav-link-->
+                <div id="submenu-pages" class="submenu submenu-pages collapse" data-bs-parent="#menu-accordion" style="">
+                  <ul class="submenu-list list-unstyled">
+                    <li class="submenu-item">
+                      <a id="pages-login" class="submenu-link" href="login-page.html">Login</a>
+                    </li>                   
+                  </ul>
+                </div>
+              </li>
+              <!--//---**********------------>
+              <!--//---Menu Tests------------>
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-tests" aria-expanded="false" aria-controls="submenu-tests">
+                  <span class="nav-icon">
+                    <i class="bi bi-box-seam icon-sm">&nbsp;&nbsp;</i>
+                  </span>
+                  <span class="nav-link-text">Tests</span>
+                  <span class="submenu-arrow">
+                    <i class="bi bi-chevron-down"></i> 
+                  </span><!--//submenu-arrow--> 
+                </a><!--//nav-link-->
+                <div id="submenu-tests" class="submenu submenu-tests collapse" data-bs-parent="#menu-accordion" style="">
+                  <ul class="submenu-list list-unstyled">
+                    <li class="submenu-item">
+                      <a id="tests-datepicker" class="submenu-link" href="test-datepicker.html">Datepicker</a>
+                    </li>                   
+                  </ul>
+                </div>
+              </li>
+              <!--//---**********------------>
+
+            </ul>
+            <!--//app-menu-->
+          </nav>
+          <!--//app-nav-->
+
+          <div class="app-sidepanel-footer">
+            <nav class="app-nav app-nav-footer">
+              <ul class="app-menu footer-menu list-unstyled">
+                <li class="nav-item">
+                  <a id="home-icons" class="nav-link">
+                    <span class="nav-icon">
+                      <i class="bi bi-gear icon-sm">&nbsp;&nbsp;</i>
+                    </span>
+                    <span class="nav-link-text">Settings</span> 
+                  </a><!--//nav-link-->
+                </li>
+                <!--//nav-item-->
+              </ul>
+              <!--//footer-menu-->
+            </nav>
+          </div>
+          <!--//app-sidepanel-footer-->
+        </div>
+        <!--//sidepanel-inner-->
+      </div>
+      <!--//app-sidepanel-->
+    </header>
+
+    <div class="app-wrapper">
+      <main role="main" class="pb-3">
+        <div class="app-content pt-3 p-md-3 p-lg-4">
+          <div class="container-xl">
+            <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
+              <div class="col-auto">
+                <h1 class="app-page-title">
+                  <i class="fa-solid fa-cloud">&nbsp;&nbsp;</i>Systemipsum
+                </h1>
+              </div>
+              <div class="col-auto">
+                <p></p>
+              </div>
+            </div>
+            <div class="app-beveled-line mb-4 "></div>
+
+            <div class="row gy-4">
+              <div class="col-12">
+                <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+                  <div class="app-card-header px-4 p-3 w-100">
+                    <div class="row g-3 mb-1 align-items-center justify-content-between"></div>
+                  </div><!--//app-card-header-->
+                  <div class="app-card-body px-4 w-100">
+
+
+
         <main>
             <section class="section container is-fluid">
               <div class="mb-3">
@@ -27,7 +310,40 @@
               </div>
             </section>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+
+                  </div><!--//app-card-body-->
+                  <div class="app-card-footer p-4 mt-auto"></div><!--//app-card-footer-->
+                </div><!--//app-card-->
+              </div>
+            </div>
+          </div><!--//container-xl-->
+        </div>
+      </main>
+    </div>
+
+<footer class="border-top app-footer text-muted">
+  <div class="text-center app-footer-content">
+  <div class="copyright">&copy; 2023 - Systemipsum</div>
+  <a class="app-primary-link underline" asp-area="" asp-controller="Legal" asp-action="Terms">Terms of Use</a>
+  &amp;
+  <a class="app-primary-link underline" asp-area="" asp-controller="Legal" asp-action="Privacy">Privacy Policies</a>
+  |
+  <a class="app-primary-link underline" asp-area="" asp-controller="Legal" asp-action="Cookies">Cookies</a>
+  <div>
+  <small>
+    Original design with <i class="fa-solid fa-heart" style="color: #fb866a"></i> by <a class="app-primary-link underline" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers.
+    <br />
+    This site was inspired and designed based on the original project.
+  </small>
+  
+  </div>
+  </div>
+</footer>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>    
+
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
+    <script type="module" src="script.js"></script>
     <script>
         const elem = document.querySelector('input[name="BirthDate"]');
         const datepicker = new Datepicker(elem, {
@@ -37,26 +353,26 @@
         }); 
 
         const datePicker = MCDatepicker.create({
-  el: '#datepicker',
-  bodyType: 'modal', //modal | inline
-  dateFormat: 'dddd, dd/mm/yyyy',
-  closeOnBlur: true,
-  minDate: new Date(2020, 10, 25),
-    maxDate: new Date(2023, 11, 31),
-    selectedDate: new Date(),
-    customClearBTN: 'Limpar',
-    customCancelBTN: 'Cancelar',
-    showCalendarDisplay: true,
-  customWeekDays: ['Domingo', 'Segunda-feira', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-  customMonths: ['Janeiro', 'Fevereiro', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Outubro', 'November', 'December']
-});
+          el: '#datepicker',
+          bodyType: 'modal', //modal | inline
+          dateFormat: 'dddd, dd/mm/yyyy',
+          closeOnBlur: true,
+          minDate: new Date(2020, 10, 25),
+            maxDate: new Date(2023, 11, 31),
+            selectedDate: new Date(),
+            customClearBTN: 'Limpar',
+            customCancelBTN: 'Cancelar',
+            showCalendarDisplay: true,
+          customWeekDays: ['Domingo', 'Segunda-feira', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          customMonths: ['Janeiro', 'Fevereiro', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Outubro', 'November', 'December']
+        });
 
-document.getElementById('calendar').addEventListener('click', () => {
-  console.log(document.querySelectorAll('.mc-calendar'));
-  console.log(datePicker);
-  datePicker.open();
-  console.log();
-});
+        document.getElementById('calendar').addEventListener('click', () => {
+          console.log(document.querySelectorAll('.mc-calendar'));
+          console.log(datePicker);
+          datePicker.open();
+          console.log();
+        });
     </script>
    <body>
 </html>
