@@ -6,7 +6,7 @@
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: #212529;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #212529;
+  --bs-table-hover-color: var(--app-font-color);
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
@@ -16,22 +16,28 @@
 }
 
 .table>:not(:first-child) {
-  border-top: 2px solid currentColor;
+  border-top: 2px solid  currentColor; /* var(--app-main-border-color);*/
 }
 
-.darkmode .table.table-striped {
+.darkmode .table {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
   --bs-table-striped-color: var(--app-font-color);
   --bs-table-active-bg: #373b3e;
   --bs-table-active-color: #fff;
   --bs-table-hover-bg: #323539;
-  --bs-table-hover-color: #fff;
   color: var(--app-font-color);
   border-color: #373b3e;
 }
 
 @media (max-width: 650px){
+  .table>:not(:first-child) {
+    border-top: none;
+  }
+  .table tr:not(:first-child) {
+    border-top: 2px solid currentColor;
+  }
+
   th{
     display: none;
   }
