@@ -19,6 +19,10 @@
   border-top: 2px solid  currentColor; /* var(--app-main-border-color);*/
 }
 
+.table-borderless>:not(:first-child) {
+  border-top: none;
+}
+
 .darkmode .table {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
@@ -30,6 +34,44 @@
   border-color: #373b3e;
 }
 
+
+
+.tag-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+  margin-bottom:  1px;
+  border-radius: 5px;
+  border: none 1px red;
+}
+
+.tag {
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  margin-right: 4px;
+  margin-bottom: 0px;
+  padding: .25rem .5rem;
+  border-radius: 24px;
+  background-color: #1E88E5;
+  color: white;
+  font-size: .75rem;
+  
+  transition: background-color .15s;
+}
+
+.tag:hover {
+  background-color: #f44336;
+}
+
+.tag:active {
+  background-color: #e53935;
+}
+
+
+/*****************************************************************/
 @media (max-width: 650px){
   .table>:not(:first-child) {
     border-top: none;
@@ -46,6 +88,15 @@
     gap: 0.5rem;
     grid-template-columns: 15ch auto;
     padding: 0.5rem 1rem;
+  }
+
+  
+
+  .table-bordered>:not(caption)>*>* {
+
+    border-color: #ced4da;
+    border-style: solid;
+    border-width: 1px;
   }
 
   td.empty{
