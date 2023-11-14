@@ -9,4 +9,4 @@ Xiaoying Riley
 
 https://twitter.com/3rdwave_themes
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/management-panel-template-dark-mode)
+[Open in StackBlitz ⚡️](https://management-panel-template-dark-mode.stackblitz.io/)
