@@ -330,7 +330,15 @@
                           </div>
                           <div class="app-form-group mb-3">
                             <label for="inputPassword" class="">Password</label>
-                            <input type="password" class="form-control" id="inputPassword">
+                            <div class="input-group">
+                              <input type="password" class="form-control" id="inputPassword">
+                              <button id="toggle-password" type="button" class="btn-toggle-password btn app-btn-outline-lightgray-strong" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Show password as plain text. Warning: this will display your password on the screen." 
+                                        aria-label="Show password as plain text. Warning: this will display your password on the screen."
+                                >
+                                    <i class="fa-regular fa-eye" id="show_eye"></i>
+                                </button>
+                            </div>
                             <div class="line"></div>
                           </div>
                           
@@ -396,5 +404,40 @@
     <script type="module" src="script.js"></script>
   </body>
   <script>
-  </script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("toggle-password").addEventListener("click", togglePassword);
+    });//end DOMContentLoaded
+
+    function togglePassword() {
+	//var passwordInput = this.closest("div").querySelector("[type='password']") ? this.closest("div").querySelector("[type='password']") : this.closest("div").querySelector("[type='text']");
+	var passwordInput = this.closest("div").querySelector("input");
+
+	//console.log("-- passwordInput ----------");
+	//console.log(passwordInput);
+	//console.log("---------------------------------");
+
+	if (passwordInput.type === "password") {
+		passwordInput.type = "text";
+		this.setAttribute("aria-label", "Hide password.");
+		this.setAttribute("data-bs-original-title", "Hide password.");
+		this.querySelector("i").classList.add("fa-eye-slash");
+		this.querySelector("i").classList.remove("fa-eye");
+	} else {
+		passwordInput.type = "password";
+		this.setAttribute(
+			"aria-label",
+			"Show password as plain text. Warning: this will display your password on the screen."
+		);
+		this.setAttribute(
+			"data-bs-original-title",
+			"Show password as plain text. Warning: this will display your password on the screen."
+		);
+		this.querySelector("i").classList.add("fa-eye");
+		this.querySelector("i").classList.remove("fa-eye-slash");
+	}
+	tooltipList.forEach(function (tooltip) {
+		tooltip.hide();		
+	});
+}
+</script>
 </html>
