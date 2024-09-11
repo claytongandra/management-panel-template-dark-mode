@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Accordion</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" />
@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/styles-dark.css" />
     <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/buttons/style-buttons-app.css" />
-    <link rel="stylesheet" href="css/buttons/style-buttons-app-dark.css" />
+    <link rel="stylesheet" href="css/components/style-accordion.css" />
+    <link rel="stylesheet" href="css/components/style-accordion-dark.css" />
     <script type="module" src="script-darkmode.js"></script>
   </head>
 
@@ -44,7 +44,7 @@
               <div class="app-utilities col-auto">
                 <div class="app-utility-item app-dark-mode-toggle-item">
                   <div class="app-dark-mode-toggle">
-                    <input class="checkbox" type="checkbox" id="dark-mode-toggle" name="status" value="on"/>
+                    <input class="checkbox" type="checkbox" id="dark-mode-toggle" name="status" value="on" />
 
                     <label class="switch" for="dark-mode-toggle">
                       <span class="icon-wrapper">
@@ -55,16 +55,14 @@
                       <span class="switch__label--light">
                         <span class="d-none d-sm-none d-md-block">Light</span> </span><!--Light --><!-- Claro -->
                       <span class="switch__label--dark">
-                        <span class="d-none d-sm-none d-md-block">Dark</span> </span><!--Dark --><!-- Escuro -->
+                        <span class="d-none d-sm-none d-md-block">
+                          Dark </span> </span><!--Dark --><!-- Escuro -->
                     </label>
-                  </div>
-                  <!--//app-dark-mode-toggle-->
-                </div>
-                <!--//app-dark-mode-toggle-->
-
+                  </div><!--//app-dark-mode-toggle-->
+                </div><!--//app-dark-mode-toggle-->
                 <div class="app-utility-item app-user-dropdown dropdown">
                   <a class="btn dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                    <img src="https://avatars.githubusercontent.com/u/695924?s=96&v=4" id="profile-image" alt="Imagem do Perfil"/>
+                    <img src="https://avatars.githubusercontent.com/u/695924?s=96&v=4" id="profile-image" alt="Imagem do Perfil" />
                     <span class="xl-display-none">Clayton Gandra</span>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 38px);">
@@ -78,21 +76,10 @@
                     </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="/Users/TeamMember/Details/2e0f0140-3828-402a-80fc-ef7a2388709a"
-                        ><i class="bi bi-person-lines-fill icon-sm"
-                          >&nbsp;&nbsp;</i
-                        >Conta</a
-                      >
+                      <a class="dropdown-item" href="/Users/TeamMember/Details/2e0f0140-3828-402a-80fc-ef7a2388709a"><i class="bi bi-person-lines-fill icon-sm">&nbsp;&nbsp;</i>Conta</a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="/Manage/Account/ChangePassword"
-                        ><i class="bi bi-key icon-sm">&nbsp;&nbsp;</i>Alterar
-                        Senha</a
-                      >
+                      <a class="dropdown-item" href="/Manage/Account/ChangePassword"><i class="bi bi-key icon-sm">&nbsp;&nbsp;</i>Alterar Senha</a>
                     </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
@@ -124,9 +111,10 @@
             </a>
           </div>
           <!--//app-branding-->
-          <!--//---Menu Home------------>
+
           <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
             <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+              <!--//---Menu Home------------>
               <li id="linkHome" class="nav-item">
                 <a class="nav-link" href="/">
                   <span class="nav-icon">
@@ -182,8 +170,8 @@
               </li>
               <!--//---**********------------>
               <!--//---Menu Buttons & Links------------>
-              <li class="nav-item has-submenu active">
-                <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-buttons" aria-expanded="true" aria-controls="submenu-buttons">
+              <li class="nav-item has-submenu">
+                <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-buttons" aria-expanded="false" aria-controls="submenu-buttons">
                   <span class="nav-icon">
                     <i class="bi bi-hand-index-thumb icon-sm">&nbsp;&nbsp;</i>
                   </span>
@@ -192,50 +180,51 @@
                     <i class="bi bi-chevron-down"></i> 
                   </span><!--//submenu-arrow--> 
                 </a><!--//nav-link-->
-                <div id="submenu-buttons" class="submenu submenu-buttons collapse show" data-bs-parent="#menu-accordion" style="">
+                <div id="submenu-buttons" class="submenu submenu-buttons collapse" data-bs-parent="#menu-accordion" style="">
                   <ul class="submenu-list list-unstyled">                 
                     <li class="submenu-item">
-                      <a id="buttons-app" class="submenu-link active" href="buttons-app.html">App Buttons</a>
+                      <a id="buttons-app" class="submenu-link" href="buttons-app.html">App Buttons</a>
                     </li>
                     <li class="submenu-item">
                       <a id="buttons-bootstrap" class="submenu-link" href="buttons-bootstrap.html">Buttons Bootstrap</a>
                     </li>
                     <li class="submenu-item">
                       <a id="links-app" class="submenu-link" href="links-app.html">Links</a>
-                    </li>                 
+                    </li> 
                   </ul>
                 </div>
               </li>
               <!--//---**********------------>
+             
               <!--//---Menu Components------------>
+              <li class="nav-item has-submenu active">
+               <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-components" aria-expanded="true" aria-controls="submenu-components">
+                 <span class="nav-icon">
+                   <i class="bi bi-boxes icon-sm">&nbsp;&nbsp;</i>
+                 </span>
+                 <span class="nav-link-text">Components</span>
+                 <span class="submenu-arrow">
+                   <i class="bi bi-chevron-down"></i> 
+                 </span><!--//submenu-arrow--> 
+               </a><!--//nav-link-->
+               <div id="submenu-components" class="submenu submenu-components collapse show" data-bs-parent="#menu-accordion" style="">
+                 <ul class="submenu-list list-unstyled">
+                  <li class="submenu-item">
+                    <a id="components-accordion" class="submenu-link active" href="accordion.html">Accordion</a>
+                  </li>
+                   <li class="submenu-item">
+                      <a id="alert-alerts" class="submenu-link" href="alerts.html">Alerts</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a id="alert-alerts-inline" class="submenu-link" href="alerts-inline.html">Alerts Inline</a>
+                    </li>
+                  
+                 </ul>
+               </div>
+             </li>
+             <!--//---**********------------>            
+              <!--//---Menu Pages------------>
               <li class="nav-item has-submenu">
-              <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-components" aria-expanded="false" aria-controls="submenu-components">
-                <span class="nav-icon">
-                  <i class="bi bi-boxes icon-sm">&nbsp;&nbsp;</i>
-                </span>
-                <span class="nav-link-text">Components</span>
-                <span class="submenu-arrow">
-                  <i class="bi bi-chevron-down"></i> 
-                </span><!--//submenu-arrow--> 
-              </a><!--//nav-link-->
-              <div id="submenu-components" class="submenu submenu-components collapse" data-bs-parent="#menu-accordion" style="">
-                <ul class="submenu-list list-unstyled">
-                  <li class="submenu-item">
-                    <a id="components-accordion" class="submenu-link" href="accordion.html">Accordion</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a id="components-alerts" class="submenu-link" href="alerts.html">Alerts</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a id="components-alerts-inline" class="submenu-link" href="alerts-inline.html">Alerts Inline</a>
-                  </li>
-                 
-                </ul>
-              </div>
-            </li>
-            <!--//---**********------------>
-            <!--//---Menu Pages------------>
-            <li class="nav-item has-submenu">
               <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-pages" aria-expanded="false" aria-controls="submenu-pages">
                 <span class="nav-icon">
                   <i class="bi bi-window-stack icon-sm">&nbsp;&nbsp;</i>
@@ -249,13 +238,13 @@
                 <ul class="submenu-list list-unstyled">
                   <li class="submenu-item">
                     <a id="pages-login" class="submenu-link" href="login-page.html">Login</a>
-                  </li>                 
+                  </li>                  
                 </ul>
               </div>
-            </li>
-            <!--//---**********------------>
-             <!--//---Menu Tests------------>
-             <li class="nav-item has-submenu">
+              </li>
+              <!--//---**********------------>
+              <!--//---Menu Tests------------>
+              <li class="nav-item has-submenu">
               <a class="nav-link submenu-toggle collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-tests" aria-expanded="false" aria-controls="submenu-tests">
                 <span class="nav-icon">
                   <i class="bi bi-box-seam icon-sm">&nbsp;&nbsp;</i>
@@ -269,16 +258,14 @@
                 <ul class="submenu-list list-unstyled">
                   <li class="submenu-item">
                     <a id="tests-datepicker" class="submenu-link" href="test-datepicker.html">Datepicker</a>
-                  </li>                 
+                  </li>                  
                 </ul>
               </div>
-            </li>
-            <!--//---**********------------>            
+              </li>
+              <!--//---**********------------>
 
-            </ul>
-            <!--//app-menu-->
-          </nav>
-          <!--//app-nav-->
+            </ul><!--//app-menu-->
+          </nav><!--//app-nav-->
 
           <div class="app-sidepanel-footer">
             <nav class="app-nav app-nav-footer">
@@ -288,19 +275,13 @@
                     <span class="nav-icon">
                       <i class="bi bi-gear icon-sm">&nbsp;&nbsp;</i>
                     </span>
-                    <span class="nav-link-text">Settings</span> </a
-                  ><!--//nav-link-->
-                </li>
-                <!--//nav-item-->
-              </ul>
-              <!--//footer-menu-->
+                    <span class="nav-link-text">Settings</span> </a><!--//nav-link-->
+                </li><!--//nav-item-->
+              </ul><!--//footer-menu-->
             </nav>
-          </div>
-          <!--//app-sidepanel-footer-->
-        </div>
-        <!--//sidepanel-inner-->
-      </div>
-      <!--//app-sidepanel-->
+          </div><!--//app-sidepanel-footer-->
+        </div><!--//sidepanel-inner-->
+      </div><!--//app-sidepanel-->
     </header>
 
     <div class="app-wrapper">
@@ -310,30 +291,11 @@
             <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
               <div class="col-auto">
                 <h1 class="app-page-title">
-                  <i class="fa-solid fa-toggle-off">&nbsp;&nbsp;</i>App Buttons
+                <i class="fa-regular fa-window-maximize">&nbsp;&nbsp;</i>Accordion
                 </h1>
               </div>
-              <div class="col-auto d-flex">                 
-                  <div class="dropdown app-form-group app-form-group-sm mx-1">
-                    <select id="backgroundSelect" class="form-select" aria-label="Select background level">
-                      <option>Select background level</option>
-                      <option disabled>   </option>
-                      <option value="B" selected>Background</option>
-                      <option value="S">Surface</option>
-                      <option value="O">Overlay</option>
-                    </select>
-                    <div class="line"></div>                
-                  </div>
-                  <div class="dropdown app-form-group app-form-group-sm mx-1">
-                    <select id="buttonSizeSelect" class="form-select"  aria-label="Select button size">
-                      <option>Select button size</option>
-                      <option disabled>  </option>
-                      <option value="R" selected>Regular button</option>
-                      <option value="S">Small button</option>
-                      <option value="L">Large button</option>
-                    </select>
-                    <div class="line"></div>
-                  </div>
+              <div class="col-auto">
+                <a class="btn btn-outline-secondary btn-sm" href="#"><i class="fa-solid fa-sliders">&nbsp;&nbsp;</i>Style Settings</a>
               </div>
             </div>
             <div class="app-beveled-line mb-4 "></div>
@@ -346,67 +308,46 @@
                   </div>
                   <!--//app-card-header-->
                   <div class="app-card-body px-4 w-100">
-                    <h4>App Principal</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                    <button type="button" class="btn app-btn-default btn-example">Default</button>
-                    <button type="button" class="btn app-btn-primary btn-example">Primary</button>
-                    <button type="button" class="btn app-btn-secondary btn-example">Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 0.5rem;">Disabled state</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-default btn-example" disabled>Default</button>
-                        <button type="button" class="btn app-btn-primary btn-example" disabled>Primary</button>
-                        <button type="button" class="btn app-btn-secondary btn-example" disabled>Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 3rem;">Outline app buttons</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-outline-default btn-example">Default</button>
-                        <button type="button" class="btn app-btn-outline-primary btn-example">Primary</button>
-                        <button type="button" class="btn app-btn-outline-secondary btn-example">Secondary</button>
-                    </div>
-                    <h4 style="margin-top: 0.5rem;">Outline Disabled state</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-outline-default btn-example" disabled>Default</button>
-                        <button type="button" class="btn app-btn-outline-primary btn-example" disabled>Primary</button>
-                        <button type="button" class="btn app-btn-outline-secondary btn-example" disabled>Secondary</button>
-                    </div>
-
-                    <h4 style="margin-top: 3rem;">Gradient buttons</h4>
-                    <div class="bg-example bg-color m-0 border-1">
-                        <button type="button" class="btn app-btn-gradient-border btn-example">Gradient Border</button>
-                        <button type="button" class="btn app-btn-gradient borter-0 btn-example">Gradient Button</button>
-                    </div>
-
-                      <h4 style="margin-top: 3rem;">Switches</h4>
-                      <div id="switchesExample" class="bg-example bg-color m-0 border-1">
-                        
-                        <div class="app-form-group mb-3">
-                          <div class="form-check form-switch app-switch">
-                            <input class="form-check-input" type="checkbox" role="switch"  id="appSwitchCheckDefault" value="true">
-                            <label class="form-check-label" for="appSwitchCheckDefault"> Default app switch checkbox input</label>
-                          </div>
-                        </div>
-                        <div class="app-form-group mb-3">
-                          <div class="form-check form-switch app-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckChecked" checked>
-                            <label class="form-check-label" for="appSwitchCheckChecked">Default app checked switch checkbox input</label>
-                          </div>
-                        </div>
-                        <div class="app-form-group mb-3">
-                          <div class="form-check form-switch app-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckDisabled" disabled>
-                            <label class="form-check-label" for="appSwitchCheckDisabled">Default app disabled switch checkbox input</label>
-                          </div>
-                        </div>
-                        <div class="app-form-group mb-3">
-                          <div class="form-check form-switch app-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="appSwitchCheckCheckedDisabled" checked disabled>
-                            <label class="form-check-label" for="appSwitchCheckCheckedDisabled">Default app disabled checked switch checkbox input</label>
-                          </div>
-                        </div>
-                         
-                      </div>
-                  </div><!--//app-card-body-->
+<div class="app-accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                  <!--//app-card-body-->
                   <div class="app-card-footer p-4 mt-auto"></div>
                   <!--//app-card-footer-->
                 </div>
@@ -436,66 +377,7 @@
     </div>
   </div>
     </footer>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
+    <script type="module"  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const backgroundSelect = document.getElementById("backgroundSelect");
-    const divs = document.querySelectorAll(".bg-example");
-
-    backgroundSelect.addEventListener("change", () => {
-        const selectedValue = backgroundSelect.value;
-
-        divs.forEach((div) => {
-            //div.className = "bg-example"; // Reset classes
-            // Mantenha as classes existentes e adicione a nova classe com base na seleção
-            div.classList.remove("bg-color", "bg-surface", "bg-surface-overlay");
-            if (selectedValue === "B") {
-                div.classList.add("bg-color");
-            } else if (selectedValue === "S") {
-                div.classList.add("bg-surface");
-            } else if (selectedValue === "O") {
-                div.classList.add("bg-surface-overlay");
-            }
-        });
-    });
-
-    const buttonSizeSelect = document.getElementById("buttonSizeSelect");
-    const btns = document.querySelectorAll(".btn-example");
-    const switchesSection = document.getElementById("switchesExample");
-    const fields = switchesSection.querySelectorAll(".app-form-group");
-
-    buttonSizeSelect.addEventListener("change", () => {
-      const selectedValue = buttonSizeSelect.value;
-
-      btns.forEach((btn) => {
-        btn.classList.remove("btn-lg", "btn-sm");
-        if (selectedValue === "S") {
-          btn.classList.add("btn-sm");
-        } else if (selectedValue === "L") {
-          btn.classList.add("btn-lg");       
-        }
-      });
-
-      fields.forEach((field) => {
-          //div.className = "bg-example"; // Reset classes
-          // Mantenha as classes existentes e adicione a nova classe com base na seleção
-          field.classList.remove("app-form-group-sm", "app-form-group-lg");
-          if (selectedValue === "S") {
-            field.classList.add("app-form-group-sm");
-          }
-          else if (selectedValue === "L"){
-            field.classList.add("app-form-group-lg");
-          }
-      });
-
-    });
-
-  });//end DOMContentLoaded
-
-</script>
 </html>
