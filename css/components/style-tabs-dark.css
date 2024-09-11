@@ -1,0 +1,5 @@
+.darkmode .app-nav-tabs{
+  
+  --app-tabs-border-top-color-active: #cccccc;
+  --bs-nav-tabs-link-hover-border-color: var(--app-text-gray-700);
+}

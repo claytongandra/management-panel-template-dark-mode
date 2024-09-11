@@ -1,0 +1,74 @@
+.app-nav-tabs{
+  --app-tabs-label-color-active: var(--app-primary-color);
+  --app-tabs-label-color-inactive: #5d6778;
+  
+  --app-tabs-border-top-color-active: var(--app-dark-color);
+  --app-tabs-border-top-thickness: 4px;
+  --app-tabs-transition-duration: 200ms;
+  
+  --bs-nav-tabs-border-width: 1px;
+  --bs-nav-tabs-border-color: var(--app-main-border-color);
+  --bs-nav-tabs-border-radius: 0;
+  --bs-nav-tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
+  --bs-nav-tabs-link-active-border-color: var(--bs-nav-tabs-border-color) var(--bs-nav-tabs-border-color) var(--app-bg-surface-color);
+  border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+
+  margin-top: 0.25rem;
+    padding-left: 0;
+}
+
+.app-nav-tabs .nav-item .nav-link {
+  display: inline-block;
+  position: relative;
+  color: var(--app-tabs-label-color-inactive); 
+  border-top-left-radius: var(--bs-nav-tabs-border-radius);
+  border-top-right-radius: var(--bs-nav-tabs-border-radius);
+  transition-property: none;
+}
+
+.app-nav-tabs .nav-item .nav-link:hover,
+.app-nav-tabs .nav-item .nav-link:focus {
+    color: var(--app-tabs-label-color-active);
+}
+
+.app-nav-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 100%;
+  background-color: var(--app-primary-color);
+  height: 0;
+  transition-property: height;
+  transition-duration: var(--app-tabs-transition-duration);
+}
+.app-nav-tabs .nav-item .nav-link:hover::after {
+  height: var(--app-tabs-border-top-thickness);
+}
+
+.app-nav-tabs .nav-item .nav-link.active {
+  background-color: var(--app-bg-surface-color);
+  color: var(--app-tabs-label-color-active);
+  font-weight: 500;
+}
+.app-nav-tabs .nav-item .nav-link.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 100%;
+  background-color: var(--app-tabs-border-top-color-active);
+  height: var(--app-tabs-border-top-thickness);
+}
+.app-nav-tabs .nav-item .nav-link:disabled{
+
+  opacity: 0.65;
+}
+
+.app-nav-tabs.tab-sm .nav-link{
+  padding: 0.25rem 0.5rem;
+}
+
+.tab-pane {
+  background-color: var(--app-bg-surface-color);
+}
