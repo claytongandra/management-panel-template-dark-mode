@@ -60,8 +60,7 @@
   background-color: var(--app-tabs-border-top-color-active);
   height: var(--app-tabs-border-top-thickness);
 }
-.app-nav-tabs .nav-item .nav-link:disabled{
-
+.app-nav-tabs .nav-item .nav-link:disabled {
   opacity: 0.65;
 }
 

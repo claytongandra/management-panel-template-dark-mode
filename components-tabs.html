@@ -219,7 +219,7 @@
                       <a id="alert-alerts-inline" class="submenu-link" href="alerts-inline.html">Alerts Inline</a>
                     </li>
                     <li class="submenu-item">
-                      <a id="components-tabs" class="submenu-link active" href="tabs.html">Tabs</a>
+                      <a id="components-tabs" class="submenu-link active" href="components-tabs.html">Tabs</a>
                     </li>
                  </ul>
                </div>
@@ -293,11 +293,20 @@
             <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
               <div class="col-auto">
                 <h1 class="app-page-title">
-                <i class="fa-regular fa-window-maximize">&nbsp;&nbsp;</i>Accordion
+                <i class="fa-regular fa-window-maximize">&nbsp;&nbsp;</i>Tabs
                 </h1>
               </div>
-              <div class="col-auto">
-                <p></p>
+              <div class="col-auto d-flex">
+                <div class="dropdown app-form-group-animated app-form-group-sm mx-1">
+                  <select id="selectTabsHeight" class="form-select app-border" aria-label="Select Tabs Height">
+                    <option disabled>Select tabs height</option>
+                    <option disabled>  </option>
+                    <option value="D" selected>Default</option>
+                    <option value="S">Small</option>
+                  </select>
+                  <label for="selectTabsHeight">Tab height</label> 
+                  <div class="line"></div>
+              </div>
               </div>
             </div>
             <div class="app-beveled-line mb-4 "></div>
@@ -310,7 +319,7 @@
                   </div>
                   <!--//app-card-header-->
                   <div class="app-card-body px-0 w-100">
-<ul class="nav nav-tabs app-nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs app-nav-tabs" id="tabExample" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
   </li>
@@ -326,16 +335,16 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane p-2 fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    ... Home ...
+    <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
   </div>
   <div class="tab-pane p-2 fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    ... Profile ...
+    <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
   </div>
   <div class="tab-pane p-2 fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-    ... Contact ...
+    <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
   </div>
   <div class="tab-pane p-2 fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-    ... Disabled ...
+    <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
   </div>
 </div>
                   </div>
@@ -371,5 +380,55 @@
     </footer>
     <script type="module"  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="script.js"></script>
+    <script>
+       /* ------------------------------------------------- */
+       function checkValue(element) {
+        // check if the input has any value (if we've typed into it)
+        if (element.value)
+          element.classList.add('has-value');
+        else
+          element.classList.remove('has-value');
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Run on page load
+        var formControls = document.querySelectorAll('.app-form-group-animated .form-control, .app-form-group-animated .form-select');
+        formControls.forEach(function(control) {
+          checkValue(control);
+        });
+
+        // Run on input exit
+        formControls.forEach(function(control) {
+          control.addEventListener('blur', function() {
+            checkValue(control);
+          });
+        });
+
+        fnAddSelectTabsHeight();      
+
+      });
+      /* ------------------------------------------------- */
+
+      fnAddSelectTabsHeight = function(){
+        const selectTabsHeight = document.getElementById("selectTabsHeight");
+        const tab = document.getElementById("tabExample");
+        //const buttons = tab.querySelectorAll(".btn");
+
+        selectTabsHeight.addEventListener("change", () => {
+            const selectedValue = selectTabsHeight.value;
+
+            tab.classList.remove("tab-sm");
+            if (selectedValue === "S") {
+              tab.classList.add("tab-sm");
+              /*
+              buttons.forEach((btn) => {
+                btn.classList.add("btn-sm");
+              });
+              */
+            }
+        });
+      }
+    </script>  
+
   </body>
 </html>
