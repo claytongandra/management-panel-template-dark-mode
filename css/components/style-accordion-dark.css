@@ -7,3 +7,8 @@
 .darkmode .app-accordion .accordion-button:not(.collapsed)::after {
   background-image: var(--bs-accordion-btn-active-icon);
 }
+
+.darkmode  .accordion-button:not(.collapsed) {
+    border-bottom: 2px solid var(--app-text-gray-800);;
+    box-shadow: none;
+}
