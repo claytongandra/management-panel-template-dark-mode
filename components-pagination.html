@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/styles-dark.css" />
     <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/components/style-tabs.css" />
-    <link rel="stylesheet" href="css/components/style-tabs-dark.css" />
+    <link rel="stylesheet" href="css/components/style-pagination.css" />
+    <link rel="stylesheet" href="css/components/style-pagination-dark.css" />
+    <link rel="stylesheet" href="css/content/style-tables-dark.css" />
     <script type="module" src="script-darkmode.js"></script>
   </head>
 
@@ -219,10 +220,10 @@
                       <a id="alert-alerts-inline" class="submenu-link" href="alerts-inline.html">Alerts Inline</a>
                     </li>
                     <li class="submenu-item">
-                      <a id="components-pagination" class="submenu-link" href="components-pagination.html">Pagination</a>
+                      <a id="components-pagination" class="submenu-link active" href="components-pagination.html">Pagination</a>
                     </li>
                     <li class="submenu-item">
-                      <a id="components-tabs" class="submenu-link active" href="components-tabs.html">Tabs</a>
+                      <a id="components-tabs" class="submenu-link" href="components-tabs.html">Tabs</a>
                     </li>
                  </ul>
                </div>
@@ -296,18 +297,19 @@
             <div class="row app-page-nav-toolbar g-3 justify-content-between align-items-center">
               <div class="col-auto">
                 <h1 class="app-page-title">
-                <i class="fa-regular fa-window-maximize">&nbsp;&nbsp;</i>Tabs
+                  <i class="fa-solid fa-layer-group">&nbsp;&nbsp;</i>Pagination
                 </h1>
               </div>
               <div class="col-auto d-flex">
                 <div class="dropdown app-form-group-animated app-form-group-sm mx-1">
-                  <select id="selectTabsHeight" class="form-select app-border" aria-label="Select Tabs Height">
-                    <option disabled>Select tabs height</option>
+                  <select id="selectPaginationSize" class="form-select app-border" aria-label="Select Pagination Size">
+                    <option disabled>Select pagination size</option>
                     <option disabled>  </option>
                     <option value="D" selected>Default</option>
                     <option value="S">Small</option>
+                    <option value="L">Large</option>
                   </select>
-                  <label for="selectTabsHeight">Tab height</label> 
+                  <label for="selectPaginationSize">Pagination Size</label> 
                   <div class="line"></div>
               </div>
               </div>
@@ -322,37 +324,55 @@
                   </div>
                   <!--//app-card-header-->
                   <div class="app-card-body px-0 w-100">
-<ul class="nav nav-tabs app-nav-tabs" id="tabExample" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane p-2 fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-  </div>
-  <div class="tab-pane p-2 fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-  </div>
-  <div class="tab-pane p-2 fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-    <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-  </div>
-  <div class="tab-pane p-2 fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-    <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
-  </div>
-</div>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td colspan="2">Larry the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                   <!--//app-card-body-->
-                  <div class="app-card-footer p-3 mt-auto w-100"></div>
+                  <div class="app-card-footer p-3 mt-auto w-100">
+<nav aria-label="...">
+  <ul class="app-pagination justify-content-center mb-0" id="paginationExample">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <span class="page-link">2</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+                  </div>
                   <!--//app-card-footer-->
                 </div>
                 <!--//app-card-->
@@ -407,27 +427,24 @@
           });
         });
 
-        fnAddSelectTabsHeight();      
+        fnAddselectPaginationSize();      
 
       });
       /* ------------------------------------------------- */
 
-      fnAddSelectTabsHeight = function(){
-        const selectTabsHeight = document.getElementById("selectTabsHeight");
-        const tab = document.getElementById("tabExample");
-        //const buttons = tab.querySelectorAll(".btn");
+      fnAddselectPaginationSize = function(){
+        const selectPaginationSize = document.getElementById("selectPaginationSize");
+        const pagination = document.getElementById("paginationExample");
 
-        selectTabsHeight.addEventListener("change", () => {
-            const selectedValue = selectTabsHeight.value;
+        selectPaginationSize.addEventListener("change", () => {
+            const selectedValue = selectPaginationSize.value;
 
-            tab.classList.remove("tab-sm");
+            pagination.classList.remove("pagination-sm","pagination-lg");
             if (selectedValue === "S") {
-              tab.classList.add("tab-sm");
-              /*
-              buttons.forEach((btn) => {
-                btn.classList.add("btn-sm");
-              });
-              */
+              pagination.classList.add("pagination-sm");              
+            }
+            else if (selectedValue === "L"){
+              pagination.classList.add("pagination-lg");
             }
         });
       }
