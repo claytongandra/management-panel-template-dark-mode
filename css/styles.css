@@ -105,10 +105,13 @@
   --app-body-test-border: none 1px var(--app-color-red);
   --app-header-test-border: none 1px var(--app-color-green);
   --app-header-inner-test-border: none 1px var(--app-color-red);
-  --app-branding-test-border: none 1px var(--app-color-yellow);
   --app-branding-logo-test-border: none 1px var(--app-color-red);
-  --app-sidepanel-footer-test-border: none 1px var(--app-color-blue);
+  --app-wrapper-test-border: none 1px var(--app-color-red);
+  --app-branding-test-border: none 1px var(--app-color-yellow);
   --app-sidepanel-test-border: none 1px var(--app-color-green);
+  --app-sidepanel-inner-test-border: none 1px var(--app-color-red);
+  --app-sidepanel-app-nav-main-test-border: none 1px var(--app-color-blue);
+  --app-sidepanel-footer-test-border: none 1px var(--app-color-blue);
   --app-content-test-border: none 1px var(--app-color-green);
   --app-footer-test-border: none 1px var(--app-color-red);
   /*--------------------------------------------------------------*/
@@ -189,7 +192,7 @@ body {
 .app-wrapper {
   transition: all 0.4s ease-in-out;
   /* Test only  */
-  border: var(--app-test-border-red);
+  border: var(--app-wrapper-test-border);
   /*  ***********/
 }
 
@@ -312,10 +315,6 @@ body {
 /* Side Panel  */
 /*--------------------------------------------------------------*/
 .app-sidepanel {
-  /* Test only  */
-  border: var(--app-sidepanel-test-border);
-  /*  ***********/
-
   position: fixed;
   min-height: 100vh;
   height: 100%;
@@ -323,13 +322,16 @@ body {
   top: 0;
   font-size: 0.875rem;
   border-right: 1px solid var(--app-main-border-color);
+  /* Test only  */
+  border: var(--app-sidepanel-test-border);
+  /*  ***********/
 }
 .app-sidepanel .panel-drop {
   display: none;
 }
 .app-sidepanel .sidepanel-inner {
   /* Test only  */
-  border: var(--app-test-border-green);
+  border: var(--app-sidepanel-inner-test-border);
   /*  ***********/
 
   position: relative;
@@ -377,7 +379,7 @@ body {
   scrollbar-color: rgba(0, 0, 0, 0.1) #e7e9ed;
   scrollbar-width: thin;
   /* Test only  */
-  border: var(--app-test-border-blue);
+  border: var(--app-sidepanel-app-nav-main-test-border);
   /*  ***********/
 }
 .app-sidepanel .app-nav-main::-webkit-scrollbar {
@@ -435,7 +437,6 @@ body {
   margin-bottom: 0;
 }
 /*--------------------------------------------------------------*/
-
 /* app-nav */
 /*--------------------------------------------------------------*/
 .app-nav {
