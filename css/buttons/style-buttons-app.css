@@ -10,7 +10,7 @@
 .btn.app-btn-default:focus {
     color: #fff;
     background-color: var(--app-dark-color);
-    border-color: var(--app-dark-color);
+    border-color: var(--app-primary-color);
 }
 
 .btn.app-btn-primary {
@@ -120,7 +120,10 @@
   background-clip: padding-box, border-box;
 }
 
-
+.bg-color-preset{
+  background:var(--app-footer-bg-color);
+  background:#333333;
+}
 /*
 .form-switch.app-switch .form-check-input {
   width: 2.5em;
